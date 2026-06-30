@@ -1,0 +1,7 @@
+# Raw trace artifacts are large generated data. Treat them as binary so GitHub
+# does not attempt to render multi-million-line JSON/JSONL diffs.
+data/unpacked_raw_data/** -diff
+
+# Archive files are binary artifacts.
+*.zip binary
+
