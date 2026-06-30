@@ -3076,7 +3076,7 @@
           },
           "classical_ref": null,
           "verdict": "unverified",
-          "verdict_reason": "oracle error: ValueError: QUBO 规模 52 超出暴力枚举上限 20",
+          "verdict_reason": "oracle error: ValueError: QUBO scale 52 exceeds the brute-force enumeration upper limit 20",
           "sandbox_ok": true,
           "stage_flags": {
             "parse_ok": true,
@@ -4561,7 +4561,7 @@
           },
           "classical_ref": null,
           "verdict": "unverified",
-          "verdict_reason": "oracle error: ValueError: 无法识别的实例类型: 'qubo_diagonal'",
+          "verdict_reason": "oracle error: ValueError: Unrecognizable instance type: 'qubo_diagonal'",
           "sandbox_ok": true,
           "stage_flags": {
             "parse_ok": true,
@@ -15024,7 +15024,7 @@
           },
           "classical_ref": null,
           "verdict": "unverified",
-          "verdict_reason": "oracle error: ValueError: QUBO 规模 101 超出暴力枚举上限 20",
+          "verdict_reason": "oracle error: ValueError: QUBO scale 101 exceeds the brute-force enumeration upper limit 20",
           "sandbox_ok": true,
           "stage_flags": {
             "parse_ok": true,
@@ -15204,7 +15204,7 @@
           },
           "classical_ref": null,
           "verdict": "unverified",
-          "verdict_reason": "oracle error: ValueError: qubo 实例缺少必填字段: 'matrix'",
+          "verdict_reason": "oracle error: ValueError: qubo the instance is missing required fields: 'matrix'",
           "sandbox_ok": true,
           "stage_flags": {
             "parse_ok": true,
@@ -15884,7 +15884,7 @@
           },
           "classical_ref": null,
           "verdict": "unverified",
-          "verdict_reason": "oracle error: ValueError: qubo 实例缺少必填字段: 'matrix'",
+          "verdict_reason": "oracle error: ValueError: qubo the instance is missing required fields: 'matrix'",
           "sandbox_ok": true,
           "stage_flags": {
             "parse_ok": true,
@@ -18050,7 +18050,7 @@
           },
           "classical_ref": null,
           "verdict": "unverified",
-          "verdict_reason": "oracle error: ValueError: qubo 实例缺少必填字段: 'matrix'",
+          "verdict_reason": "oracle error: ValueError: qubo the instance is missing required fields: 'matrix'",
           "sandbox_ok": true,
           "stage_flags": {
             "parse_ok": true,
@@ -18110,7 +18110,7 @@
           },
           "classical_ref": null,
           "verdict": "unverified",
-          "verdict_reason": "oracle error: ValueError: qubo 实例缺少必填字段: 'matrix'",
+          "verdict_reason": "oracle error: ValueError: qubo the instance is missing required fields: 'matrix'",
           "sandbox_ok": true,
           "stage_flags": {
             "parse_ok": true,
@@ -18655,7 +18655,7 @@
           },
           "classical_ref": null,
           "verdict": "unverified",
-          "verdict_reason": "oracle error: ValueError: 无法识别的实例类型: 'qubo_diagonal'",
+          "verdict_reason": "oracle error: ValueError: Unrecognizable instance type: 'qubo_diagonal'",
           "sandbox_ok": true,
           "stage_flags": {
             "parse_ok": true,
@@ -19216,7 +19216,7 @@
           },
           "classical_ref": null,
           "verdict": "unverified",
-          "verdict_reason": "oracle error: ValueError: 无法识别的实例类型: 'qubo_partitioned'",
+          "verdict_reason": "oracle error: ValueError: Unrecognizable instance type: 'qubo_partitioned'",
           "sandbox_ok": true,
           "stage_flags": {
             "parse_ok": true,
@@ -20479,7 +20479,7 @@
           },
           "classical_ref": null,
           "verdict": "unverified",
-          "verdict_reason": "oracle error: ValueError: QUBO 规模 31 超出暴力枚举上限 20",
+          "verdict_reason": "oracle error: ValueError: QUBO scale 31 exceeds the brute-force enumeration upper limit 20",
           "sandbox_ok": true,
           "stage_flags": {
             "parse_ok": true,
@@ -20850,7 +20850,7 @@
           },
           "classical_ref": null,
           "verdict": "unverified",
-          "verdict_reason": "oracle error: ValueError: 无法识别的实例类型: 'qubo_diagonal'",
+          "verdict_reason": "oracle error: ValueError: Unrecognizable instance type: 'qubo_diagonal'",
           "sandbox_ok": true,
           "stage_flags": {
             "parse_ok": true,
