@@ -1,7 +1,13 @@
-# Empirical Study
+# Empirical Study for QPipe
 
 This directory contains the scripts, processed data, and rendered figures used
-for the empirical study.
+for the QPipe empirical study.
+
+The scripts were written for the submission artifact layout where this
+directory is available as `./empirical_study/` from the artifact root. If this
+directory is checked out under a different name, either run the scripts from an
+artifact root that contains an `empirical_study` directory or pass explicit
+input/output paths where the scripts expose CLI arguments.
 
 ## Directory Layout
 
@@ -11,10 +17,10 @@ empirical_study/
   classical_reference/
   data/
     unpacked_raw_data/
-      claude/
-      deepseek/
-      llama/
-      claude_ablation/
+      claude.zip
+      deepseek.zip
+      llama.zip
+      claude_ablation.zip
     processed_data/
       rq1/
       rq2/
@@ -33,7 +39,25 @@ empirical_study/
 
 ## Inputs
 
-The scripts read only local repository data. Main inputs are:
+The raw trace data is stored as zip archives to keep the repository compact.
+Before running the RQ scripts, extract the archives in place so the expected
+`claude/`, `deepseek/`, `llama/`, and `claude_ablation/` directories exist
+under `./empirical_study/data/unpacked_raw_data/`.
+
+PowerShell:
+
+```powershell
+Expand-Archive empirical_study\data\unpacked_raw_data\claude.zip `
+  -DestinationPath empirical_study\data\unpacked_raw_data -Force
+Expand-Archive empirical_study\data\unpacked_raw_data\deepseek.zip `
+  -DestinationPath empirical_study\data\unpacked_raw_data -Force
+Expand-Archive empirical_study\data\unpacked_raw_data\llama.zip `
+  -DestinationPath empirical_study\data\unpacked_raw_data -Force
+Expand-Archive empirical_study\data\unpacked_raw_data\claude_ablation.zip `
+  -DestinationPath empirical_study\data\unpacked_raw_data -Force
+```
+
+After extraction, the scripts read only local repository data. Main inputs are:
 
 ```text
 ./empirical_study/data/unpacked_raw_data/
@@ -43,13 +67,19 @@ The scripts read only local repository data. Main inputs are:
 ./reports/
 ```
 
-The preprocessing scripts export SQLite trace databases and experiment summary
-files from `./reports/` into structured JSON/JSONL files under
-`./empirical_study/data/unpacked_raw_data/`.
+The preprocessing scripts can regenerate the unpacked JSON/JSONL trace files
+from SQLite trace databases and experiment summary files under `./reports/`.
+For normal artifact reproduction, extracting the bundled zip archives is
+sufficient.
 
 ## Preprocessing
 
 Run commands from the repository root.
+
+This step is only needed if regenerating the unpacked raw-data archives from
+the original report databases. For reproducing the current tables and figures,
+extract the zip archives in `./empirical_study/data/unpacked_raw_data/` first
+and run the RQ scripts directly.
 
 Export all supported record databases:
 
@@ -182,7 +212,7 @@ python empirical_study\scripts\rq3\data_visualization.py
 This writes:
 
 ```text
-./empirical_study/visualization/rq3_pattern.tex
+./empirical_study/visualization/rq3_pattern.pdf
 ```
 
 Optional explicit command:
@@ -272,7 +302,7 @@ The current `./empirical_study/visualization/` directory contains:
 ./empirical_study/visualization/rq1_performance.tex
 ./empirical_study/visualization/rq1_requirement_correlation.pdf
 ./empirical_study/visualization/rq2_boxplot.pdf
-./empirical_study/visualization/rq3_pattern.tex
+./empirical_study/visualization/rq3_pattern.pdf
 ./empirical_study/visualization/rq4_ablation.pdf
 ./empirical_study/visualization/rq5_cross_model.tex
 ```
