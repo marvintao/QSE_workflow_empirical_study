@@ -1,0 +1,16 @@
+{
+  "test case selection": {
+    "time": 268.1014666666666,
+    "tokens": 1865183.566666667,
+    "compilation": 1.0,
+    "execution": 0.9333333333333333,
+    "combination": 0.9333333333333333
+  },
+  "test case minimization": {
+    "time": 252.19683333333333,
+    "tokens": 1905448.0,
+    "compilation": 1.0,
+    "execution": 1.0,
+    "combination": 1.0
+  }
+}

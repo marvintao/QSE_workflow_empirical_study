@@ -1,0 +1,30 @@
+{
+  "source": "./reports/all_new_record.db",
+  "counts": {
+    "requests": 60,
+    "stage_traces": 6893,
+    "agent_rounds": 823
+  },
+  "final_status_counts": {
+    "failed": 50,
+    "success": 10
+  },
+  "verification_status_counts": {
+    "mismatch": 47,
+    "None": 2,
+    "cross_checked": 6,
+    "unverified": 4,
+    "failed": 1
+  },
+  "stage_counts": {
+    "parse": 60,
+    "analyze": 60,
+    "blueprint": 60,
+    "encode": 60,
+    "codegen": 60,
+    "global_review": 60,
+    "execute": 6417,
+    "combine": 58,
+    "verify": 58
+  }
+}

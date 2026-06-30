@@ -1,0 +1,3752 @@
+{
+  "metadata": {
+    "inputs": {
+      "raw_root": "./empirical_study/data/unpacked_raw_data",
+      "model_experiment_runs": {
+        "claude": "./empirical_study/data/unpacked_raw_data/claude/experiment_runs.jsonl",
+        "deepseek": "./empirical_study/data/unpacked_raw_data/deepseek/experiment_runs.jsonl",
+        "llama": "./empirical_study/data/unpacked_raw_data/llama/experiment_runs.jsonl"
+      },
+      "req_overview": "./use_cases/requirements/req_overview.json",
+      "req_txt_dir": "./use_cases/requirements/req_txt"
+    },
+    "counts": {
+      "models": 3,
+      "common_requirements": 10,
+      "runs_by_model": {
+        "claude": 30,
+        "deepseek": 30,
+        "llama": 30
+      }
+    },
+    "model_summary": {
+      "claude": {
+        "output_metrics": {
+          "pass@k_compilation": {
+            "pass@1": 1.0,
+            "pass@2": 1.0,
+            "pass@3": 1.0
+          },
+          "pass@k_execution": {
+            "pass@1": 0.9333333333333333,
+            "pass@2": 0.9666666666666668,
+            "pass@3": 1.0
+          },
+          "pass@k_combination": {
+            "pass@1": 0.9333333333333333,
+            "pass@2": 0.9666666666666668,
+            "pass@3": 1.0
+          }
+        },
+        "stage_metrics": {
+          "parse": {
+            "passed": 30,
+            "total": 30,
+            "count": "30/30"
+          },
+          "analyze": {
+            "passed": 30,
+            "total": 30,
+            "count": "30/30"
+          },
+          "blueprint": {
+            "passed": 30,
+            "total": 30,
+            "count": "30/30"
+          },
+          "encode": {
+            "passed": 30,
+            "total": 30,
+            "count": "30/30"
+          },
+          "codegen": {
+            "passed": 30,
+            "total": 30,
+            "count": "30/30"
+          },
+          "execute": {
+            "passed": 28,
+            "total": 30,
+            "count": "28/30"
+          },
+          "combine": {
+            "passed": 28,
+            "total": 30,
+            "count": "28/30"
+          },
+          "verify": {
+            "passed": 28,
+            "total": 30,
+            "count": "28/30"
+          }
+        }
+      },
+      "deepseek": {
+        "output_metrics": {
+          "pass@k_compilation": {
+            "pass@1": 1.0,
+            "pass@2": 1.0,
+            "pass@3": 1.0
+          },
+          "pass@k_execution": {
+            "pass@1": 0.4999999999999999,
+            "pass@2": 0.6666666666666667,
+            "pass@3": 0.8
+          },
+          "pass@k_combination": {
+            "pass@1": 0.4999999999999999,
+            "pass@2": 0.6666666666666667,
+            "pass@3": 0.8
+          }
+        },
+        "stage_metrics": {
+          "parse": {
+            "passed": 30,
+            "total": 30,
+            "count": "30/30"
+          },
+          "analyze": {
+            "passed": 30,
+            "total": 30,
+            "count": "30/30"
+          },
+          "blueprint": {
+            "passed": 30,
+            "total": 30,
+            "count": "30/30"
+          },
+          "encode": {
+            "passed": 30,
+            "total": 30,
+            "count": "30/30"
+          },
+          "codegen": {
+            "passed": 30,
+            "total": 30,
+            "count": "30/30"
+          },
+          "execute": {
+            "passed": 15,
+            "total": 30,
+            "count": "15/30"
+          },
+          "combine": {
+            "passed": 15,
+            "total": 30,
+            "count": "15/30"
+          },
+          "verify": {
+            "passed": 14,
+            "total": 30,
+            "count": "14/30"
+          }
+        }
+      },
+      "llama": {
+        "output_metrics": {
+          "pass@k_compilation": {
+            "pass@1": 0.0,
+            "pass@2": 0.0,
+            "pass@3": 0.0
+          },
+          "pass@k_execution": {
+            "pass@1": 0.0,
+            "pass@2": 0.0,
+            "pass@3": 0.0
+          },
+          "pass@k_combination": {
+            "pass@1": 0.0,
+            "pass@2": 0.0,
+            "pass@3": 0.0
+          }
+        },
+        "stage_metrics": {
+          "parse": {
+            "passed": 30,
+            "total": 30,
+            "count": "30/30"
+          },
+          "analyze": {
+            "passed": 30,
+            "total": 30,
+            "count": "30/30"
+          },
+          "blueprint": {
+            "passed": 30,
+            "total": 30,
+            "count": "30/30"
+          },
+          "encode": {
+            "passed": 30,
+            "total": 30,
+            "count": "30/30"
+          },
+          "codegen": {
+            "passed": 0,
+            "total": 30,
+            "count": "0/30"
+          },
+          "execute": {
+            "passed": 0,
+            "total": 30,
+            "count": "0/30"
+          },
+          "combine": {
+            "passed": 0,
+            "total": 30,
+            "count": "0/30"
+          },
+          "verify": {
+            "passed": 0,
+            "total": 30,
+            "count": "0/30"
+          }
+        }
+      }
+    },
+    "data_quality_notes": {
+      "common_requirements": [
+        "req_0",
+        "req_1",
+        "req_2",
+        "req_3",
+        "req_7",
+        "req_10",
+        "req_11",
+        "req_12",
+        "req_13",
+        "req_17"
+      ],
+      "incomplete_repeats": []
+    },
+    "notes": [
+      "Only requirements present in claude, deepseek, and llama experiment_runs.jsonl are included.",
+      "Only test case optimization requirements are included: test case selection and test case minimization.",
+      "Output pass@k is computed from compilation_success, execution_success, and combination_success over each model's repeated runs.",
+      "Stage metrics count successful stage runs over the common requirements, e.g., 23/30.",
+      "Model summary values are requirement-level macro means over the common requirements."
+    ]
+  },
+  "requirements": [
+    {
+      "req_id": "req_0",
+      "se_general_problem": "test case optimization",
+      "se_specific_problem": "test case selection",
+      "req_size": {
+        "char_count": 153043
+      },
+      "models": {
+        "claude": {
+          "repeats": {
+            "1": {
+              "request_id": "063cf0a4-7788-447d-b745-107eaf94ae03",
+              "rid8": "063cf0a4",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": true,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "2": {
+              "request_id": "e00d05c5-f0b0-4bf8-8e0d-06dfcdd772ef",
+              "rid8": "e00d05c5",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            },
+            "3": {
+              "request_id": "710b8a59-bd71-4923-99a4-5555fc3a9a9c",
+              "rid8": "710b8a59",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": true,
+              "execution_success": false,
+              "combination_success": false
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.33333333333333337,
+              "pass@2": 0.6666666666666667,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.33333333333333337,
+              "pass@2": 0.6666666666666667,
+              "pass@3": 1.0
+            }
+          },
+          "stage_metrics": {
+            "parse": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "analyze": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "blueprint": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "encode": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "codegen": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "execute": {
+              "passed": 1,
+              "total": 3,
+              "count": "1/3"
+            },
+            "combine": {
+              "passed": 1,
+              "total": 3,
+              "count": "1/3"
+            },
+            "verify": {
+              "passed": 1,
+              "total": 3,
+              "count": "1/3"
+            }
+          }
+        },
+        "deepseek": {
+          "repeats": {
+            "1": {
+              "request_id": "68d805a0-94ac-460c-9b97-cba45b5238e1",
+              "rid8": "68d805a0",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            },
+            "2": {
+              "request_id": "5164fed8-c5a6-4796-9fa4-e9c664621efd",
+              "rid8": "5164fed8",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            },
+            "3": {
+              "request_id": "4d2a09d2-f016-4674-bd37-49942846a2b3",
+              "rid8": "4d2a09d2",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": false
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "stage_metrics": {
+            "parse": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "analyze": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "blueprint": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "encode": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "codegen": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "execute": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "combine": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "verify": {
+              "passed": 2,
+              "total": 3,
+              "count": "2/3"
+            }
+          }
+        },
+        "llama": {
+          "repeats": {
+            "1": {
+              "request_id": "dfc95f22-25dc-4c9d-b35b-ad0c724c7acc",
+              "rid8": "dfc95f22",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": false,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "2": {
+              "request_id": "4372646f-9869-4044-97e5-79183c74e59c",
+              "rid8": "4372646f",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": false,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "3": {
+              "request_id": "2d9e9696-cbf9-4d2a-bc88-212a65bf1276",
+              "rid8": "2d9e9696",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": false,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            }
+          },
+          "stage_metrics": {
+            "parse": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "analyze": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "blueprint": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "encode": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "codegen": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "execute": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "combine": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "verify": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            }
+          }
+        }
+      }
+    },
+    {
+      "req_id": "req_1",
+      "se_general_problem": "test case optimization",
+      "se_specific_problem": "test case selection",
+      "req_size": {
+        "char_count": 160318
+      },
+      "models": {
+        "claude": {
+          "repeats": {
+            "1": {
+              "request_id": "ade91176-67d0-40d8-bbd8-c24cbc63cfa2",
+              "rid8": "ade91176",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            },
+            "2": {
+              "request_id": "529625d1-75d7-438e-82ca-d09857873874",
+              "rid8": "529625d1",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            },
+            "3": {
+              "request_id": "54399dad-9212-435b-9cb8-9af2c9dd2b1b",
+              "rid8": "54399dad",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "stage_metrics": {
+            "parse": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "analyze": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "blueprint": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "encode": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "codegen": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "execute": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "combine": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "verify": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            }
+          }
+        },
+        "deepseek": {
+          "repeats": {
+            "1": {
+              "request_id": "4f860356-783c-4c80-9c64-4ee31227c3db",
+              "rid8": "4f860356",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            },
+            "2": {
+              "request_id": "4e78aabf-fb83-4851-99e7-237ad9fd5165",
+              "rid8": "4e78aabf",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            },
+            "3": {
+              "request_id": "13bcc4dd-dee4-438a-a2b4-876c7c7174b5",
+              "rid8": "13bcc4dd",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "stage_metrics": {
+            "parse": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "analyze": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "blueprint": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "encode": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "codegen": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "execute": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "combine": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "verify": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            }
+          }
+        },
+        "llama": {
+          "repeats": {
+            "1": {
+              "request_id": "5e8afffd-cc99-4b81-af71-1ffe1c837068",
+              "rid8": "5e8afffd",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": false,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "2": {
+              "request_id": "a3ea095c-7001-4930-a12f-3f2331d3b114",
+              "rid8": "a3ea095c",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": false,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "3": {
+              "request_id": "275da70d-b503-4b9a-9c19-8dd658789c79",
+              "rid8": "275da70d",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": false,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            }
+          },
+          "stage_metrics": {
+            "parse": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "analyze": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "blueprint": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "encode": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "codegen": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "execute": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "combine": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "verify": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            }
+          }
+        }
+      }
+    },
+    {
+      "req_id": "req_2",
+      "se_general_problem": "test case optimization",
+      "se_specific_problem": "test case selection",
+      "req_size": {
+        "char_count": 449923
+      },
+      "models": {
+        "claude": {
+          "repeats": {
+            "1": {
+              "request_id": "961f2a2e-581d-440a-985c-57bdcfab71f8",
+              "rid8": "961f2a2e",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            },
+            "2": {
+              "request_id": "574f8327-30f2-452e-8b18-9399a0e73c4c",
+              "rid8": "574f8327",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            },
+            "3": {
+              "request_id": "99b775d5-0a84-491a-9135-4b6090921f38",
+              "rid8": "99b775d5",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "stage_metrics": {
+            "parse": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "analyze": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "blueprint": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "encode": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "codegen": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "execute": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "combine": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "verify": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            }
+          }
+        },
+        "deepseek": {
+          "repeats": {
+            "1": {
+              "request_id": "6f7daa92-0f7b-4402-b524-93875099c98a",
+              "rid8": "6f7daa92",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": true,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "2": {
+              "request_id": "95769206-abe5-4d35-9653-11c2f0a264f8",
+              "rid8": "95769206",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": true,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "3": {
+              "request_id": "e82a95c4-4a07-4c8f-b8f0-b619e53585c6",
+              "rid8": "e82a95c4",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": true,
+              "execution_success": false,
+              "combination_success": false
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            }
+          },
+          "stage_metrics": {
+            "parse": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "analyze": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "blueprint": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "encode": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "codegen": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "execute": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "combine": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "verify": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            }
+          }
+        },
+        "llama": {
+          "repeats": {
+            "1": {
+              "request_id": "52aa03a1-2ebb-4b20-9857-a27ed846ff0b",
+              "rid8": "52aa03a1",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": false,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "2": {
+              "request_id": "f3ccf45f-2121-4d6f-a30a-fe2a4ca88bbc",
+              "rid8": "f3ccf45f",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": false,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "3": {
+              "request_id": "c4f5ea87-9d7d-4ee7-80b0-e2c34c0eae7b",
+              "rid8": "c4f5ea87",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": false,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            }
+          },
+          "stage_metrics": {
+            "parse": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "analyze": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "blueprint": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "encode": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "codegen": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "execute": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "combine": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "verify": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            }
+          }
+        }
+      }
+    },
+    {
+      "req_id": "req_3",
+      "se_general_problem": "test case optimization",
+      "se_specific_problem": "test case selection",
+      "req_size": {
+        "char_count": 155969
+      },
+      "models": {
+        "claude": {
+          "repeats": {
+            "1": {
+              "request_id": "93741be3-b306-437a-adda-253ef1bc33e5",
+              "rid8": "93741be3",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            },
+            "2": {
+              "request_id": "26867630-7d2e-455c-96c9-eafb571d7e8e",
+              "rid8": "26867630",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            },
+            "3": {
+              "request_id": "0e659987-8bdb-4cc6-a133-711b7af3f2de",
+              "rid8": "0e659987",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "stage_metrics": {
+            "parse": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "analyze": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "blueprint": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "encode": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "codegen": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "execute": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "combine": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "verify": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            }
+          }
+        },
+        "deepseek": {
+          "repeats": {
+            "1": {
+              "request_id": "7999b344-faf4-4cdc-b0c1-2cb095543943",
+              "rid8": "7999b344",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": true,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "2": {
+              "request_id": "02b70790-f789-438e-a913-77c6caa3d3c9",
+              "rid8": "02b70790",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            },
+            "3": {
+              "request_id": "a2014534-aded-4ed0-8567-9d9e33c307ab",
+              "rid8": "a2014534",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": true,
+              "execution_success": false,
+              "combination_success": false
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.33333333333333337,
+              "pass@2": 0.6666666666666667,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.33333333333333337,
+              "pass@2": 0.6666666666666667,
+              "pass@3": 1.0
+            }
+          },
+          "stage_metrics": {
+            "parse": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "analyze": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "blueprint": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "encode": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "codegen": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "execute": {
+              "passed": 1,
+              "total": 3,
+              "count": "1/3"
+            },
+            "combine": {
+              "passed": 1,
+              "total": 3,
+              "count": "1/3"
+            },
+            "verify": {
+              "passed": 1,
+              "total": 3,
+              "count": "1/3"
+            }
+          }
+        },
+        "llama": {
+          "repeats": {
+            "1": {
+              "request_id": "17f2ac1d-eb14-4c98-853c-f881557943bc",
+              "rid8": "17f2ac1d",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": false,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "2": {
+              "request_id": "b563fdb2-4f20-4e31-98cc-45b551c81171",
+              "rid8": "b563fdb2",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": false,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "3": {
+              "request_id": "424353d4-eba3-457f-a000-13c089414894",
+              "rid8": "424353d4",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": false,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            }
+          },
+          "stage_metrics": {
+            "parse": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "analyze": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "blueprint": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "encode": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "codegen": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "execute": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "combine": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "verify": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            }
+          }
+        }
+      }
+    },
+    {
+      "req_id": "req_7",
+      "se_general_problem": "test case optimization",
+      "se_specific_problem": "test case selection",
+      "req_size": {
+        "char_count": 90336
+      },
+      "models": {
+        "claude": {
+          "repeats": {
+            "1": {
+              "request_id": "d1d4324d-3f80-44e9-9406-e40114716192",
+              "rid8": "d1d4324d",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            },
+            "2": {
+              "request_id": "f0e5de0c-5c4a-4e05-bc61-d4bc5e53f20e",
+              "rid8": "f0e5de0c",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            },
+            "3": {
+              "request_id": "cc380791-2e54-4f04-92e7-6023f2ded310",
+              "rid8": "cc380791",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "stage_metrics": {
+            "parse": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "analyze": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "blueprint": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "encode": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "codegen": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "execute": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "combine": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "verify": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            }
+          }
+        },
+        "deepseek": {
+          "repeats": {
+            "1": {
+              "request_id": "e6cc7e91-9eb6-489b-9216-38565dac534b",
+              "rid8": "e6cc7e91",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": true,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "2": {
+              "request_id": "221cce8f-2a51-4053-ba59-706f1db8ff40",
+              "rid8": "221cce8f",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            },
+            "3": {
+              "request_id": "da29b2e1-cbca-4151-927f-1a7b91d77db3",
+              "rid8": "da29b2e1",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "stage_metrics": {
+            "parse": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "analyze": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "blueprint": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "encode": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "codegen": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "execute": {
+              "passed": 2,
+              "total": 3,
+              "count": "2/3"
+            },
+            "combine": {
+              "passed": 2,
+              "total": 3,
+              "count": "2/3"
+            },
+            "verify": {
+              "passed": 2,
+              "total": 3,
+              "count": "2/3"
+            }
+          }
+        },
+        "llama": {
+          "repeats": {
+            "1": {
+              "request_id": "9f873d2a-535d-4a82-93ba-4cd0d17b4192",
+              "rid8": "9f873d2a",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": false,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "2": {
+              "request_id": "aa13480d-f22a-4a6a-bed9-b0b8061bb089",
+              "rid8": "aa13480d",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": false,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "3": {
+              "request_id": "6b3d9a80-a8ef-4378-a3cf-c35470d919f5",
+              "rid8": "6b3d9a80",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": false,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            }
+          },
+          "stage_metrics": {
+            "parse": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "analyze": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "blueprint": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "encode": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "codegen": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "execute": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "combine": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "verify": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            }
+          }
+        }
+      }
+    },
+    {
+      "req_id": "req_10",
+      "se_general_problem": "test case optimization",
+      "se_specific_problem": "test case minimization",
+      "req_size": {
+        "char_count": 153230
+      },
+      "models": {
+        "claude": {
+          "repeats": {
+            "1": {
+              "request_id": "0e0c18d0-235b-480e-9749-882ab4c0cc8a",
+              "rid8": "0e0c18d0",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            },
+            "2": {
+              "request_id": "c8d9aa6f-e853-4a7d-8f4d-db0c47b3a780",
+              "rid8": "c8d9aa6f",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            },
+            "3": {
+              "request_id": "17e19668-cd43-4b27-9abf-37743c9ac571",
+              "rid8": "17e19668",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "stage_metrics": {
+            "parse": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "analyze": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "blueprint": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "encode": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "codegen": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "execute": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "combine": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "verify": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            }
+          }
+        },
+        "deepseek": {
+          "repeats": {
+            "1": {
+              "request_id": "88dfde2b-ae79-4957-9cd0-da2bb695c845",
+              "rid8": "88dfde2b",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            },
+            "2": {
+              "request_id": "e30c7fd4-424e-41f4-8390-0a732c6f096c",
+              "rid8": "e30c7fd4",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            },
+            "3": {
+              "request_id": "d352eba0-0440-46c3-8ea8-b8d53a7bb811",
+              "rid8": "d352eba0",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "stage_metrics": {
+            "parse": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "analyze": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "blueprint": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "encode": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "codegen": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "execute": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "combine": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "verify": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            }
+          }
+        },
+        "llama": {
+          "repeats": {
+            "1": {
+              "request_id": "3bdb4e29-d5d5-43be-9cbc-554d8e16ce10",
+              "rid8": "3bdb4e29",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": false,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "2": {
+              "request_id": "a9185e58-afeb-4187-8884-48d172be8f0b",
+              "rid8": "a9185e58",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": false,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "3": {
+              "request_id": "5cc2aa23-1a7b-463b-b507-88075a121c7f",
+              "rid8": "5cc2aa23",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": false,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            }
+          },
+          "stage_metrics": {
+            "parse": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "analyze": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "blueprint": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "encode": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "codegen": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "execute": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "combine": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "verify": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            }
+          }
+        }
+      }
+    },
+    {
+      "req_id": "req_11",
+      "se_general_problem": "test case optimization",
+      "se_specific_problem": "test case minimization",
+      "req_size": {
+        "char_count": 160505
+      },
+      "models": {
+        "claude": {
+          "repeats": {
+            "1": {
+              "request_id": "18b25e3c-7f55-4ce6-94dc-640f71f061de",
+              "rid8": "18b25e3c",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            },
+            "2": {
+              "request_id": "993c6433-9c3d-4a64-a8bd-eb63e31ad651",
+              "rid8": "993c6433",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            },
+            "3": {
+              "request_id": "4a95f75a-ff2b-4d8c-8528-951d7f31c69b",
+              "rid8": "4a95f75a",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "stage_metrics": {
+            "parse": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "analyze": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "blueprint": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "encode": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "codegen": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "execute": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "combine": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "verify": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            }
+          }
+        },
+        "deepseek": {
+          "repeats": {
+            "1": {
+              "request_id": "ebdc556f-7c61-4aaf-a159-ecf8130c2ba9",
+              "rid8": "ebdc556f",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": true,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "2": {
+              "request_id": "d600fa78-bf3e-4ddd-a09b-53bb5ad77d1b",
+              "rid8": "d600fa78",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": true,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "3": {
+              "request_id": "824be799-bb16-4cab-bc76-6dbf55b41285",
+              "rid8": "824be799",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.33333333333333337,
+              "pass@2": 0.6666666666666667,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.33333333333333337,
+              "pass@2": 0.6666666666666667,
+              "pass@3": 1.0
+            }
+          },
+          "stage_metrics": {
+            "parse": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "analyze": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "blueprint": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "encode": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "codegen": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "execute": {
+              "passed": 1,
+              "total": 3,
+              "count": "1/3"
+            },
+            "combine": {
+              "passed": 1,
+              "total": 3,
+              "count": "1/3"
+            },
+            "verify": {
+              "passed": 1,
+              "total": 3,
+              "count": "1/3"
+            }
+          }
+        },
+        "llama": {
+          "repeats": {
+            "1": {
+              "request_id": "8f9459f2-c278-483c-b9ac-d14a0612d409",
+              "rid8": "8f9459f2",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": false,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "2": {
+              "request_id": "e4f7e6be-fa22-4928-8370-77ffed38ea7c",
+              "rid8": "e4f7e6be",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": false,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "3": {
+              "request_id": "2102d1ff-f705-41b5-94c2-1ec6dcc5d721",
+              "rid8": "2102d1ff",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": false,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            }
+          },
+          "stage_metrics": {
+            "parse": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "analyze": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "blueprint": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "encode": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "codegen": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "execute": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "combine": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "verify": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            }
+          }
+        }
+      }
+    },
+    {
+      "req_id": "req_12",
+      "se_general_problem": "test case optimization",
+      "se_specific_problem": "test case minimization",
+      "req_size": {
+        "char_count": 450110
+      },
+      "models": {
+        "claude": {
+          "repeats": {
+            "1": {
+              "request_id": "71fe4843-d947-49ed-bba7-78076456b004",
+              "rid8": "71fe4843",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            },
+            "2": {
+              "request_id": "2b7c20a5-f667-45ba-bffe-34950dbb0912",
+              "rid8": "2b7c20a5",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            },
+            "3": {
+              "request_id": "6c8c06d1-c2dd-4b78-bf83-6402a9876cfd",
+              "rid8": "6c8c06d1",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "stage_metrics": {
+            "parse": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "analyze": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "blueprint": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "encode": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "codegen": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "execute": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "combine": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "verify": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            }
+          }
+        },
+        "deepseek": {
+          "repeats": {
+            "1": {
+              "request_id": "ebaf48e2-3369-4e75-a552-104bbaf3593a",
+              "rid8": "ebaf48e2",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": true,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "2": {
+              "request_id": "95108fd2-f620-47b2-942b-aaced6e761cd",
+              "rid8": "95108fd2",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            },
+            "3": {
+              "request_id": "7c3532c4-038d-4226-bd1d-69e39dba0dad",
+              "rid8": "7c3532c4",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": true,
+              "execution_success": false,
+              "combination_success": false
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.33333333333333337,
+              "pass@2": 0.6666666666666667,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.33333333333333337,
+              "pass@2": 0.6666666666666667,
+              "pass@3": 1.0
+            }
+          },
+          "stage_metrics": {
+            "parse": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "analyze": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "blueprint": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "encode": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "codegen": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "execute": {
+              "passed": 1,
+              "total": 3,
+              "count": "1/3"
+            },
+            "combine": {
+              "passed": 1,
+              "total": 3,
+              "count": "1/3"
+            },
+            "verify": {
+              "passed": 1,
+              "total": 3,
+              "count": "1/3"
+            }
+          }
+        },
+        "llama": {
+          "repeats": {
+            "1": {
+              "request_id": "bd493cad-064b-457a-809b-02c10722c560",
+              "rid8": "bd493cad",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": false,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "2": {
+              "request_id": "34fe7602-e5ff-4ee6-98f0-5c28921dde94",
+              "rid8": "34fe7602",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": false,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "3": {
+              "request_id": "e851f909-55c2-469f-a524-0829cd4d7f26",
+              "rid8": "e851f909",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": false,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            }
+          },
+          "stage_metrics": {
+            "parse": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "analyze": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "blueprint": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "encode": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "codegen": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "execute": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "combine": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "verify": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            }
+          }
+        }
+      }
+    },
+    {
+      "req_id": "req_13",
+      "se_general_problem": "test case optimization",
+      "se_specific_problem": "test case minimization",
+      "req_size": {
+        "char_count": 156156
+      },
+      "models": {
+        "claude": {
+          "repeats": {
+            "1": {
+              "request_id": "2ef4db4e-d931-4179-b72c-875e979a2ef4",
+              "rid8": "2ef4db4e",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            },
+            "2": {
+              "request_id": "a9598f5e-0516-4e63-a0d8-1620b402742d",
+              "rid8": "a9598f5e",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            },
+            "3": {
+              "request_id": "eade2a11-73c6-4ae8-9a5f-b76262c1c1f1",
+              "rid8": "eade2a11",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "stage_metrics": {
+            "parse": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "analyze": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "blueprint": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "encode": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "codegen": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "execute": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "combine": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "verify": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            }
+          }
+        },
+        "deepseek": {
+          "repeats": {
+            "1": {
+              "request_id": "47f46851-8133-43f8-b4d6-982ddca0a93a",
+              "rid8": "47f46851",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": true,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "2": {
+              "request_id": "a8c3e27e-2e76-4374-9122-82af98aa3d9f",
+              "rid8": "a8c3e27e",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": true,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "3": {
+              "request_id": "698d4a80-0ed3-44e8-a6cd-a3a935c8e844",
+              "rid8": "698d4a80",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.33333333333333337,
+              "pass@2": 0.6666666666666667,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.33333333333333337,
+              "pass@2": 0.6666666666666667,
+              "pass@3": 1.0
+            }
+          },
+          "stage_metrics": {
+            "parse": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "analyze": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "blueprint": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "encode": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "codegen": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "execute": {
+              "passed": 1,
+              "total": 3,
+              "count": "1/3"
+            },
+            "combine": {
+              "passed": 1,
+              "total": 3,
+              "count": "1/3"
+            },
+            "verify": {
+              "passed": 1,
+              "total": 3,
+              "count": "1/3"
+            }
+          }
+        },
+        "llama": {
+          "repeats": {
+            "1": {
+              "request_id": "c2a9ea53-ba7d-4b7b-9fc2-19f387b2ab4c",
+              "rid8": "c2a9ea53",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": false,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "2": {
+              "request_id": "ac0f9739-4c72-4afe-a714-b9e9cbf9c963",
+              "rid8": "ac0f9739",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": false,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "3": {
+              "request_id": "1a4eaf24-b80b-427a-8a93-dbf4c79f6e2b",
+              "rid8": "1a4eaf24",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": false,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            }
+          },
+          "stage_metrics": {
+            "parse": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "analyze": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "blueprint": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "encode": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "codegen": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "execute": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "combine": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "verify": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            }
+          }
+        }
+      }
+    },
+    {
+      "req_id": "req_17",
+      "se_general_problem": "test case optimization",
+      "se_specific_problem": "test case minimization",
+      "req_size": {
+        "char_count": 90523
+      },
+      "models": {
+        "claude": {
+          "repeats": {
+            "1": {
+              "request_id": "d1e1d76e-212a-401a-bb9a-b3e36c07b810",
+              "rid8": "d1e1d76e",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            },
+            "2": {
+              "request_id": "ba50ca7c-c108-4da1-88da-6ba8c13dcfd3",
+              "rid8": "ba50ca7c",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            },
+            "3": {
+              "request_id": "54c230e0-3d0b-4c76-9ef2-c2c128bf0311",
+              "rid8": "54c230e0",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": true,
+                "combine": true,
+                "verify": true
+              },
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "stage_metrics": {
+            "parse": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "analyze": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "blueprint": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "encode": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "codegen": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "execute": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "combine": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "verify": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            }
+          }
+        },
+        "deepseek": {
+          "repeats": {
+            "1": {
+              "request_id": "7038c747-e9a6-4b32-8046-fcb2fe1902f0",
+              "rid8": "7038c747",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": true,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "2": {
+              "request_id": "0a106759-884c-4519-9efd-b54e7efab6b1",
+              "rid8": "0a106759",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": true,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "3": {
+              "request_id": "62907c7d-0e76-4269-91f3-2f4d2b54eba2",
+              "rid8": "62907c7d",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": true,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": true,
+              "execution_success": false,
+              "combination_success": false
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            }
+          },
+          "stage_metrics": {
+            "parse": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "analyze": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "blueprint": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "encode": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "codegen": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "execute": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "combine": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "verify": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            }
+          }
+        },
+        "llama": {
+          "repeats": {
+            "1": {
+              "request_id": "72cab49b-2e0e-4bac-ba9c-6cb300d172de",
+              "rid8": "72cab49b",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": false,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "2": {
+              "request_id": "6e4e1cdf-9e2d-4c80-84bc-089a49b3cb75",
+              "rid8": "6e4e1cdf",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": false,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false
+            },
+            "3": {
+              "request_id": "8460b47f-23b1-46f3-887d-dbf0415d8b17",
+              "rid8": "8460b47f",
+              "stages": {
+                "parse": true,
+                "analyze": true,
+                "blueprint": true,
+                "encode": true,
+                "codegen": false,
+                "execute": false,
+                "combine": false,
+                "verify": false
+              },
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            }
+          },
+          "stage_metrics": {
+            "parse": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "analyze": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "blueprint": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "encode": {
+              "passed": 3,
+              "total": 3,
+              "count": "3/3"
+            },
+            "codegen": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "execute": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "combine": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            },
+            "verify": {
+              "passed": 0,
+              "total": 3,
+              "count": "0/3"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

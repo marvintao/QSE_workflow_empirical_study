@@ -1,0 +1,4744 @@
+{
+  "metadata": {
+    "inputs": {
+      "raw_root": "./empirical_study/data/unpacked_raw_data",
+      "claude_experiment_runs": "./empirical_study/data/unpacked_raw_data/claude/experiment_runs.jsonl",
+      "reference_dir": "./empirical_study/classical_reference/reference_data",
+      "ablation_raw_dirs": {
+        "mega_prompt_record": "./empirical_study/data/unpacked_raw_data/claude_ablation/mega_prompt_record",
+        "no_codegen_skill_record": "./empirical_study/data/unpacked_raw_data/claude_ablation/no_codegen_skill_record",
+        "no_knowledge_record": "./empirical_study/data/unpacked_raw_data/claude_ablation/no_knowledge_record",
+        "no_reviewer_record": "./empirical_study/data/unpacked_raw_data/claude_ablation/no_reviewer_record"
+      },
+      "req_overview": "./use_cases/requirements/req_overview.json",
+      "req_txt_dir": "./use_cases/requirements/req_txt"
+    },
+    "counts": {
+      "variants": 5,
+      "common_requirements": 10,
+      "runs_by_variant": {
+        "claude": 30,
+        "mega_prompt_record": 30,
+        "no_codegen_skill_record": 30,
+        "no_knowledge_record": 30,
+        "no_reviewer_record": 30
+      }
+    },
+    "data_quality_notes": {
+      "common_requirements": [
+        "req_0",
+        "req_1",
+        "req_2",
+        "req_3",
+        "req_7",
+        "req_10",
+        "req_11",
+        "req_12",
+        "req_13",
+        "req_17"
+      ],
+      "incomplete_repeats": [],
+      "raw_null_counts": {
+        "claude": {
+          "compilation": 0,
+          "execution": 0,
+          "combination": 0
+        },
+        "mega_prompt_record": {
+          "compilation": 0,
+          "execution": 0,
+          "combination": 0
+        },
+        "no_codegen_skill_record": {
+          "compilation": 1,
+          "execution": 30,
+          "combination": 30
+        },
+        "no_knowledge_record": {
+          "compilation": 1,
+          "execution": 13,
+          "combination": 13
+        },
+        "no_reviewer_record": {
+          "compilation": 2,
+          "execution": 3,
+          "combination": 3
+        }
+      }
+    },
+    "statistical_tests": {
+      "baseline": "claude",
+      "sample_unit": "requirement-level pass@1 over 10 common requirements",
+      "method": "Mann-Whitney U test, two-sided",
+      "effect_size": "centered Vargha-Delaney A12, computed as 2 * (A12 - 0.5)",
+      "magnitude_thresholds": {
+        "negligible": "< 0.147",
+        "small": "[0.147, 0.33)",
+        "medium": "[0.33, 0.474)",
+        "large": ">= 0.474"
+      },
+      "comparisons": {
+        "compilation": {
+          "mega_prompt_record": {
+            "p_value": 0.034423814325388775,
+            "a12": 0.7,
+            "effect_size": 0.3999999999999999,
+            "magnitude": "medium"
+          },
+          "no_codegen_skill_record": {
+            "p_value": 2.428174732475476e-05,
+            "a12": 1.0,
+            "effect_size": 1.0,
+            "magnitude": "large"
+          },
+          "no_knowledge_record": {
+            "p_value": 0.0006912883891052356,
+            "a12": 0.9,
+            "effect_size": 0.8,
+            "magnitude": "large"
+          },
+          "no_reviewer_record": {
+            "p_value": 0.07671597678760604,
+            "a12": 0.65,
+            "effect_size": 0.30000000000000004,
+            "magnitude": "small"
+          }
+        },
+        "execution": {
+          "mega_prompt_record": {
+            "p_value": 0.19506346626516113,
+            "a12": 0.635,
+            "effect_size": 0.27,
+            "magnitude": "small"
+          },
+          "no_codegen_skill_record": {
+            "p_value": 2.428174732475476e-05,
+            "a12": 1.0,
+            "effect_size": 1.0,
+            "magnitude": "large"
+          },
+          "no_knowledge_record": {
+            "p_value": 0.005859446732831777,
+            "a12": 0.835,
+            "effect_size": 0.6699999999999999,
+            "magnitude": "large"
+          },
+          "no_reviewer_record": {
+            "p_value": 0.385546631571102,
+            "a12": 0.585,
+            "effect_size": 0.16999999999999993,
+            "magnitude": "small"
+          }
+        },
+        "combination": {
+          "mega_prompt_record": {
+            "p_value": 0.19506346626516113,
+            "a12": 0.635,
+            "effect_size": 0.27,
+            "magnitude": "small"
+          },
+          "no_codegen_skill_record": {
+            "p_value": 2.428174732475476e-05,
+            "a12": 1.0,
+            "effect_size": 1.0,
+            "magnitude": "large"
+          },
+          "no_knowledge_record": {
+            "p_value": 0.005859446732831777,
+            "a12": 0.835,
+            "effect_size": 0.6699999999999999,
+            "magnitude": "large"
+          },
+          "no_reviewer_record": {
+            "p_value": 0.385546631571102,
+            "a12": 0.585,
+            "effect_size": 0.16999999999999993,
+            "magnitude": "small"
+          }
+        }
+      }
+    },
+    "notes": [
+      "Only requirements present in all four claude_ablation raw directories and in claude experiment_runs.jsonl are included.",
+      "The claude baseline is restricted to the 10 requirements used by the ablation study, with 3 repeats per requirement.",
+      "Raw output-level values are retained as raw_compilation_success, raw_execution_success, and raw_combination_success; unavailable or unreadable raw values remain null.",
+      "Effectiveness fields are conservative booleans: compilation_success is true only when raw_compilation_success is true; execution_success is true only when compilation_success and raw_execution_success are true; combination_success is true only when execution_success and raw_combination_success are true.",
+      "raw_null_counts reports how many raw values were null for each variant and metric over the included 30 runs.",
+      "No aggregate mean is reported; requirement-level pass@k is computed directly from boolean pass/fail values.",
+      "Statistical tests compare QPipe against each ablation using requirement-level pass@1 samples.",
+      "\"# of valid solution\" is requirement-level and follows the RQ2 alignment rule: 1 when a QRR can be computed for the requirement, otherwise 0.",
+      "QRR follows the RQ2 reduction-rate formula and repeat alignment: (Q_GA - Q_LLM) / |Q_GA| using the preferred repeat for the problem type, falling back to the first valid aligned pair."
+    ]
+  },
+  "requirements": [
+    {
+      "req_id": "req_0",
+      "se_general_problem": "test case optimization",
+      "se_specific_problem": "test case selection",
+      "req_size": {
+        "char_count": 153043
+      },
+      "variants": {
+        "claude": {
+          "repeats": {
+            "1": {
+              "request_id": "063cf0a4-7788-447d-b745-107eaf94ae03",
+              "rid8": "063cf0a4",
+              "raw_compilation_success": true,
+              "raw_execution_success": false,
+              "raw_combination_success": false,
+              "compilation_success": true,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -123.72272234783188,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "2": {
+              "request_id": "e00d05c5-f0b0-4bf8-8e0d-06dfcdd772ef",
+              "rid8": "e00d05c5",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -132.547948322439,
+                "fitness_values": {
+                  "value": -132.547948322439
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -123.72272234783188,
+                "QRR": 0.07133068046947785
+              },
+              "QRR": 0.07133068046947785
+            },
+            "3": {
+              "request_id": "710b8a59-bd71-4923-99a4-5555fc3a9a9c",
+              "rid8": "710b8a59",
+              "raw_compilation_success": true,
+              "raw_execution_success": false,
+              "raw_combination_success": false,
+              "compilation_success": true,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -123.72272234783188,
+                "QRR": null
+              },
+              "QRR": null
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.33333333333333337,
+              "pass@2": 0.6666666666666667,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.33333333333333337,
+              "pass@2": 0.6666666666666667,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": 0.07133068046947785
+        },
+        "mega_prompt_record": {
+          "repeats": {
+            "1": {
+              "request_id": "bcd723b7-0330-4115-abd6-f77f6f0c336c",
+              "rid8": "bcd723b7",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": true,
+                "qubo_value": -1.770558384276923,
+                "fitness_values": {
+                  "value": -1.770558384276923
+                },
+                "solution_key": "bitstring",
+                "solution": {
+                  "type": "bitstring",
+                  "length": 20,
+                  "preview": "01010000010001010001",
+                  "truncated": false
+                },
+                "reference_qubo_value": -123.72272234783188,
+                "QRR": -0.9856893030586636
+              },
+              "QRR": -0.9856893030586636
+            },
+            "2": {
+              "request_id": "bfd1512a-f4ab-4ca8-a74a-88416205bf8e",
+              "rid8": "bfd1512a",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": true,
+                "qubo_value": -0.8070366908754694,
+                "fitness_values": {
+                  "value": -0.8070366908754694
+                },
+                "solution_key": "bitstring",
+                "solution": {
+                  "type": "bitstring",
+                  "length": 20,
+                  "preview": "01010000010001010001",
+                  "truncated": false
+                },
+                "reference_qubo_value": -123.72272234783188,
+                "QRR": -0.9934770535633174
+              },
+              "QRR": -0.9934770535633174
+            },
+            "3": {
+              "request_id": "c2c8dc60-da15-4c7a-92d3-dd098a5238f0",
+              "rid8": "c2c8dc60",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": true,
+                "qubo_value": -1.2212486918534513,
+                "fitness_values": {
+                  "value": -1.2212486918534513
+                },
+                "solution_key": "bitstring",
+                "solution": {
+                  "type": "bitstring",
+                  "length": 10,
+                  "preview": "0101000001",
+                  "truncated": false
+                },
+                "reference_qubo_value": -123.72272234783188,
+                "QRR": -0.9901291479149639
+              },
+              "QRR": -0.9901291479149639
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": -0.9934770535633174
+        },
+        "no_codegen_skill_record": {
+          "repeats": {
+            "1": {
+              "request_id": "eb4aa95d-0909-49af-9a90-7136aef5e6b9",
+              "rid8": "eb4aa95d",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -123.72272234783188,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "2": {
+              "request_id": "d5c29d62-588a-4585-88ec-cebc93f75de9",
+              "rid8": "d5c29d62",
+              "raw_compilation_success": null,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -123.72272234783188,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "3": {
+              "request_id": "50ebdf58-2bea-4549-83bb-bbadfdcc1d22",
+              "rid8": "50ebdf58",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -123.72272234783188,
+                "QRR": null
+              },
+              "QRR": null
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            }
+          },
+          "# of valid solution": 0,
+          "QRR": null
+        },
+        "no_knowledge_record": {
+          "repeats": {
+            "1": {
+              "request_id": "f95af05d-f5bc-4163-847b-26f9763766ac",
+              "rid8": "f95af05d",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": 65827.33652762657,
+                "fitness_values": {
+                  "value": 65827.33652762657
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -123.72272234783188,
+                "QRR": -533.0553515025376
+              },
+              "QRR": -533.0553515025376
+            },
+            "2": {
+              "request_id": "51978d2d-f1d4-435b-8e86-1e3818d11af3",
+              "rid8": "51978d2d",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -176.79444351663642,
+                "fitness_values": {
+                  "value": -176.79444351663642
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -123.72272234783188,
+                "QRR": 0.4289569463206576
+              },
+              "QRR": 0.4289569463206576
+            },
+            "3": {
+              "request_id": "d8382959-5765-42ea-a825-9c01f814a280",
+              "rid8": "d8382959",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -123.72272234783188,
+                "QRR": null
+              },
+              "QRR": null
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": 0.4289569463206576
+        },
+        "no_reviewer_record": {
+          "repeats": {
+            "1": {
+              "request_id": "4adec2aa-f64a-4f06-a80c-27a1b3dbd115",
+              "rid8": "4adec2aa",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -176.79444351663642,
+                "fitness_values": {
+                  "value": -176.79444351663642
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -123.72272234783188,
+                "QRR": 0.4289569463206576
+              },
+              "QRR": 0.4289569463206576
+            },
+            "2": {
+              "request_id": "3005f9c8-409a-413f-9615-2173278f0304",
+              "rid8": "3005f9c8",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -265.095896644878,
+                "fitness_values": {
+                  "value": -265.095896644878
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -123.72272234783188,
+                "QRR": 1.1426613609389558
+              },
+              "QRR": 1.1426613609389558
+            },
+            "3": {
+              "request_id": "c55848d9-ef63-47b3-9ff1-4af871ee3b6b",
+              "rid8": "c55848d9",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -265.095896644878,
+                "fitness_values": {
+                  "value": -265.095896644878
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -123.72272234783188,
+                "QRR": 1.1426613609389558
+              },
+              "QRR": 1.1426613609389558
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": 1.1426613609389558
+        }
+      }
+    },
+    {
+      "req_id": "req_1",
+      "se_general_problem": "test case optimization",
+      "se_specific_problem": "test case selection",
+      "req_size": {
+        "char_count": 160318
+      },
+      "variants": {
+        "claude": {
+          "repeats": {
+            "1": {
+              "request_id": "ade91176-67d0-40d8-bbd8-c24cbc63cfa2",
+              "rid8": "ade91176",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": 48630.0,
+                "fitness_values": {
+                  "value": 48630.0
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 56953.0,
+                "QRR": 0.14613804365002722
+              },
+              "QRR": 0.14613804365002722
+            },
+            "2": {
+              "request_id": "529625d1-75d7-438e-82ca-d09857873874",
+              "rid8": "529625d1",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -133.57920257061411,
+                "fitness_values": {
+                  "value": -133.57920257061411
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -94.89630254669677,
+                "QRR": 0.40763337438655395
+              },
+              "QRR": 0.40763337438655395
+            },
+            "3": {
+              "request_id": "54399dad-9212-435b-9cb8-9af2c9dd2b1b",
+              "rid8": "54399dad",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -400.7376077118424,
+                "fitness_values": {
+                  "value": -400.7376077118424
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -284.68890764009046,
+                "QRR": 0.4076333743865534
+              },
+              "QRR": 0.4076333743865534
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": 0.4076333743865534
+        },
+        "mega_prompt_record": {
+          "repeats": {
+            "1": {
+              "request_id": "850b7f27-967d-4795-b8e5-c55215772fff",
+              "rid8": "850b7f27",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": true,
+                "qubo_value": -1.1710135748516899,
+                "fitness_values": {
+                  "value": -1.1710135748516899
+                },
+                "solution_key": "bitstring",
+                "solution": {
+                  "type": "bitstring",
+                  "length": 10,
+                  "preview": "0011101000",
+                  "truncated": false
+                },
+                "reference_qubo_value": 56953.0,
+                "QRR": 1.000020561051654
+              },
+              "QRR": 1.000020561051654
+            },
+            "2": {
+              "request_id": "2d2daa21-7653-4339-9b66-d9a06ef86b18",
+              "rid8": "2d2daa21",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": true,
+                "qubo_value": -1.1710135748516899,
+                "fitness_values": {
+                  "value": -1.1710135748516899
+                },
+                "solution_key": "bitstring",
+                "solution": {
+                  "type": "bitstring",
+                  "length": 10,
+                  "preview": "0011101000",
+                  "truncated": false
+                },
+                "reference_qubo_value": -94.89630254669677,
+                "QRR": -0.9876600716421438
+              },
+              "QRR": -0.9876600716421438
+            },
+            "3": {
+              "request_id": "1196a1a4-70cb-4c67-a71c-0b25daf7f2f1",
+              "rid8": "1196a1a4",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": true,
+                "qubo_value": -1.6542993852173844,
+                "fitness_values": {
+                  "value": -1.6542993852173844
+                },
+                "solution_key": "bitstring",
+                "solution": {
+                  "type": "bitstring",
+                  "length": 12,
+                  "preview": "001100100010",
+                  "truncated": false
+                },
+                "reference_qubo_value": -284.68890764009046,
+                "QRR": -0.9941890978509469
+              },
+              "QRR": -0.9941890978509469
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": -0.9941890978509469
+        },
+        "no_codegen_skill_record": {
+          "repeats": {
+            "1": {
+              "request_id": "1991b517-daf4-410b-a8b9-7383c7d7e2bd",
+              "rid8": "1991b517",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 56953.0,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "2": {
+              "request_id": "68869e61-26d4-411b-b4c8-eb32f2234246",
+              "rid8": "68869e61",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -94.89630254669677,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "3": {
+              "request_id": "a0f31543-cdf5-41a5-968c-b309027cd470",
+              "rid8": "a0f31543",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -284.68890764009046,
+                "QRR": null
+              },
+              "QRR": null
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            }
+          },
+          "# of valid solution": 0,
+          "QRR": null
+        },
+        "no_knowledge_record": {
+          "repeats": {
+            "1": {
+              "request_id": "cc162ac7-5729-4fc2-a482-d76b50f3605d",
+              "rid8": "cc162ac7",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -115.58106839933198,
+                "fitness_values": {
+                  "value": -115.58106839933198
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 56953.0,
+                "QRR": 1.0020294114164194
+              },
+              "QRR": 1.0020294114164194
+            },
+            "2": {
+              "request_id": "a9a35a3b-147b-4ebf-a6e4-e08d66f996f7",
+              "rid8": "a9a35a3b",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -94.89630254669677,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "3": {
+              "request_id": "3ab16d7a-e40e-4511-b949-e617623dd1f5",
+              "rid8": "3ab16d7a",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -133.57920257061411,
+                "fitness_values": {
+                  "value": -133.57920257061411
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -284.68890764009046,
+                "QRR": -0.5307888752044823
+              },
+              "QRR": -0.5307888752044823
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": -0.5307888752044823
+        },
+        "no_reviewer_record": {
+          "repeats": {
+            "1": {
+              "request_id": "92677290-1231-4f2c-81be-376cb4426c15",
+              "rid8": "92677290",
+              "raw_compilation_success": null,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 56953.0,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "2": {
+              "request_id": "dcc9f554-cdd5-4989-8c4c-7af88bb49e6e",
+              "rid8": "dcc9f554",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -400.7376077118424,
+                "fitness_values": {
+                  "value": -400.7376077118424
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -94.89630254669677,
+                "QRR": 3.2229001231596626
+              },
+              "QRR": 3.2229001231596626
+            },
+            "3": {
+              "request_id": "5cd7dbfb-f1c7-4cbc-a4b4-0ed8337962a1",
+              "rid8": "5cd7dbfb",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -400.7376077118424,
+                "fitness_values": {
+                  "value": -400.7376077118424
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -284.68890764009046,
+                "QRR": 0.4076333743865534
+              },
+              "QRR": 0.4076333743865534
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": 0.4076333743865534
+        }
+      }
+    },
+    {
+      "req_id": "req_2",
+      "se_general_problem": "test case optimization",
+      "se_specific_problem": "test case selection",
+      "req_size": {
+        "char_count": 449923
+      },
+      "variants": {
+        "claude": {
+          "repeats": {
+            "1": {
+              "request_id": "961f2a2e-581d-440a-985c-57bdcfab71f8",
+              "rid8": "961f2a2e",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -94.55107347187236,
+                "fitness_values": {
+                  "value": -94.55107347187236
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -63.633058194385406,
+                "QRR": 0.48587976367627994
+              },
+              "QRR": 0.48587976367627994
+            },
+            "2": {
+              "request_id": "574f8327-30f2-452e-8b18-9399a0e73c4c",
+              "rid8": "574f8327",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -47.27553673593618,
+                "fitness_values": {
+                  "value": -47.27553673593618
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -31.816529097192703,
+                "QRR": 0.48587976367627994
+              },
+              "QRR": 0.48587976367627994
+            },
+            "3": {
+              "request_id": "99b775d5-0a84-491a-9135-4b6090921f38",
+              "rid8": "99b775d5",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -152.9865538393781,
+                "fitness_values": {
+                  "value": -152.9865538393781
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -95.55055292783932,
+                "QRR": 0.6011058978896229
+              },
+              "QRR": 0.6011058978896229
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": 0.6011058978896229
+        },
+        "mega_prompt_record": {
+          "repeats": {
+            "1": {
+              "request_id": "2415a568-3f60-439a-b5ab-03c286848730",
+              "rid8": "2415a568",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": true,
+                "qubo_value": -3.7249612110485173,
+                "fitness_values": {
+                  "value": -3.7249612110485173
+                },
+                "solution_key": "bitstring",
+                "solution": {
+                  "type": "bitstring",
+                  "length": 12,
+                  "preview": "000010011111",
+                  "truncated": false
+                },
+                "reference_qubo_value": -63.633058194385406,
+                "QRR": -0.9414618546279898
+              },
+              "QRR": -0.9414618546279898
+            },
+            "2": {
+              "request_id": "742d8d07-1dfb-41a6-81cc-6c35ae340f1a",
+              "rid8": "742d8d07",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": true,
+                "qubo_value": 0.0,
+                "fitness_values": {
+                  "value": 0.0
+                },
+                "solution_key": "bitstring",
+                "solution": {
+                  "type": "bitstring",
+                  "length": 2,
+                  "preview": "00",
+                  "truncated": false
+                },
+                "reference_qubo_value": -31.816529097192703,
+                "QRR": -1.0
+              },
+              "QRR": -1.0
+            },
+            "3": {
+              "request_id": "0c4b41e0-0128-422b-9829-bb59140ce785",
+              "rid8": "0c4b41e0",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": true,
+                "qubo_value": -5.3567987844328355,
+                "fitness_values": {
+                  "value": -5.3567987844328355
+                },
+                "solution_key": "bitstring",
+                "solution": {
+                  "type": "bitstring",
+                  "length": 12,
+                  "preview": "111111110101",
+                  "truncated": false
+                },
+                "reference_qubo_value": -95.55055292783932,
+                "QRR": -0.9439375427949815
+              },
+              "QRR": -0.9439375427949815
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": -0.9439375427949815
+        },
+        "no_codegen_skill_record": {
+          "repeats": {
+            "1": {
+              "request_id": "ec248bcf-f04f-49ee-9d15-455be17bcdb7",
+              "rid8": "ec248bcf",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -63.633058194385406,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "2": {
+              "request_id": "9147bf06-5fca-4b2a-944c-41f0ec5294ae",
+              "rid8": "9147bf06",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -31.816529097192703,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "3": {
+              "request_id": "e27495d8-2d4b-4792-bf3d-984a1e1e71c0",
+              "rid8": "e27495d8",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -95.55055292783932,
+                "QRR": null
+              },
+              "QRR": null
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            }
+          },
+          "# of valid solution": 0,
+          "QRR": null
+        },
+        "no_knowledge_record": {
+          "repeats": {
+            "1": {
+              "request_id": "516ba7d6-1738-466f-865c-1fadda606394",
+              "rid8": "516ba7d6",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -47.27553673593618,
+                "fitness_values": {
+                  "value": -47.27553673593618
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -63.633058194385406,
+                "QRR": -0.25706011816186003
+              },
+              "QRR": -0.25706011816186003
+            },
+            "2": {
+              "request_id": "2ae7ee3f-36ff-4a99-8a5b-8db13dd7152e",
+              "rid8": "2ae7ee3f",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -94.55107347187236,
+                "fitness_values": {
+                  "value": -94.55107347187236
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -31.816529097192703,
+                "QRR": 1.97175952735256
+              },
+              "QRR": 1.97175952735256
+            },
+            "3": {
+              "request_id": "bc1a7447-d3fc-4b4f-8753-2b65a0edff40",
+              "rid8": "bc1a7447",
+              "raw_compilation_success": null,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -95.55055292783932,
+                "QRR": null
+              },
+              "QRR": null
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": -0.25706011816186003
+        },
+        "no_reviewer_record": {
+          "repeats": {
+            "1": {
+              "request_id": "5903b862-4728-4fca-838e-e5f57fb37c79",
+              "rid8": "5903b862",
+              "raw_compilation_success": null,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -63.633058194385406,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "2": {
+              "request_id": "124bb819-1b49-42a3-999b-c01a466cf68a",
+              "rid8": "124bb819",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -94.55107347187236,
+                "fitness_values": {
+                  "value": -94.55107347187236
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -31.816529097192703,
+                "QRR": 1.97175952735256
+              },
+              "QRR": 1.97175952735256
+            },
+            "3": {
+              "request_id": "ce9a996c-4129-448a-bb28-e0583856993d",
+              "rid8": "ce9a996c",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -44.091029992916035,
+                "fitness_values": {
+                  "value": -44.091029992916035
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -95.55055292783932,
+                "QRR": -0.5385580863544139
+              },
+              "QRR": -0.5385580863544139
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": -0.5385580863544139
+        }
+      }
+    },
+    {
+      "req_id": "req_3",
+      "se_general_problem": "test case optimization",
+      "se_specific_problem": "test case selection",
+      "req_size": {
+        "char_count": 155969
+      },
+      "variants": {
+        "claude": {
+          "repeats": {
+            "1": {
+              "request_id": "93741be3-b306-437a-adda-253ef1bc33e5",
+              "rid8": "93741be3",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -192.90671560890067,
+                "fitness_values": {
+                  "value": -192.90671560890067
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -97.40844251097546,
+                "QRR": 0.980390104144874
+              },
+              "QRR": 0.980390104144874
+            },
+            "2": {
+              "request_id": "26867630-7d2e-455c-96c9-eafb571d7e8e",
+              "rid8": "26867630",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -242.64870951062622,
+                "fitness_values": {
+                  "value": -242.64870951062622
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -77.63454387623247,
+                "QRR": 2.12552502269434
+              },
+              "QRR": 2.12552502269434
+            },
+            "3": {
+              "request_id": "0e659987-8bdb-4cc6-a133-711b7af3f2de",
+              "rid8": "0e659987",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -242.64870951062622,
+                "fitness_values": {
+                  "value": -242.64870951062622
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -77.63454387623247,
+                "QRR": 2.12552502269434
+              },
+              "QRR": 2.12552502269434
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": 2.12552502269434
+        },
+        "mega_prompt_record": {
+          "repeats": {
+            "1": {
+              "request_id": "0ca3d13f-5612-4340-ad56-20c261add3ff",
+              "rid8": "0ca3d13f",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": true,
+                "qubo_value": -7.011894532474122,
+                "fitness_values": {
+                  "value": -7.011894532474122
+                },
+                "solution_key": "bitstring",
+                "solution": {
+                  "type": "bitstring",
+                  "length": 52,
+                  "preview": "10000001000000000100000110000000000011111100000000",
+                  "truncated": true
+                },
+                "reference_qubo_value": -97.40844251097546,
+                "QRR": -0.9280155359050726
+              },
+              "QRR": -0.9280155359050726
+            },
+            "2": {
+              "request_id": "3c3e93b4-3e09-46e5-940e-0cccaf252a0c",
+              "rid8": "3c3e93b4",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": true,
+                "qubo_value": -0.9232048601311661,
+                "fitness_values": {
+                  "value": -0.9232048601311661
+                },
+                "solution_key": "bitstring",
+                "solution": {
+                  "type": "bitstring",
+                  "length": 101,
+                  "preview": "00000001000000000000000010010000000000000000000000",
+                  "truncated": true
+                },
+                "reference_qubo_value": -77.63454387623247,
+                "QRR": -0.9881083237688243
+              },
+              "QRR": -0.9881083237688243
+            },
+            "3": {
+              "request_id": "3d962c06-b81b-4034-9975-50ac833b3db7",
+              "rid8": "3d962c06",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": true,
+                "qubo_value": -1.213076989401476,
+                "fitness_values": {
+                  "value": -1.213076989401476
+                },
+                "solution_key": "bitstring",
+                "solution": {
+                  "type": "bitstring",
+                  "length": 120,
+                  "preview": "00000001000000000000000010010000000000000000000000",
+                  "truncated": true
+                },
+                "reference_qubo_value": -77.63454387623247,
+                "QRR": -0.984374520299425
+              },
+              "QRR": -0.984374520299425
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": -0.984374520299425
+        },
+        "no_codegen_skill_record": {
+          "repeats": {
+            "1": {
+              "request_id": "f74e3a42-421c-428f-9536-90bef3a9f92c",
+              "rid8": "f74e3a42",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -97.40844251097546,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "2": {
+              "request_id": "b8a06273-4498-41bd-814a-50e3d90cd561",
+              "rid8": "b8a06273",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -77.63454387623247,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "3": {
+              "request_id": "64e973b9-c858-4746-92a2-2ef8067ac186",
+              "rid8": "64e973b9",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -77.63454387623247,
+                "QRR": null
+              },
+              "QRR": null
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            }
+          },
+          "# of valid solution": 0,
+          "QRR": null
+        },
+        "no_knowledge_record": {
+          "repeats": {
+            "1": {
+              "request_id": "3cdade41-7afa-4b2e-8320-96750743aa4d",
+              "rid8": "3cdade41",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -242.64870951062622,
+                "fitness_values": {
+                  "value": -242.64870951062622
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -97.40844251097546,
+                "QRR": 1.491043930645805
+              },
+              "QRR": 1.491043930645805
+            },
+            "2": {
+              "request_id": "547e5cf5-fa07-4966-b37d-03fa827dc030",
+              "rid8": "547e5cf5",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -121.32435475531311,
+                "fitness_values": {
+                  "value": -121.32435475531311
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -77.63454387623247,
+                "QRR": 0.5627625113471699
+              },
+              "QRR": 0.5627625113471699
+            },
+            "3": {
+              "request_id": "71f9c385-eff3-4453-ad42-a70551b21912",
+              "rid8": "71f9c385",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -241.82831388999213,
+                "fitness_values": {
+                  "value": -241.82831388999213
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -77.63454387623247,
+                "QRR": 2.114957618293253
+              },
+              "QRR": 2.114957618293253
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": 2.114957618293253
+        },
+        "no_reviewer_record": {
+          "repeats": {
+            "1": {
+              "request_id": "89f1126a-88cd-4d9f-8027-39b42d9c0bed",
+              "rid8": "89f1126a",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -64.68092132370109,
+                "fitness_values": {
+                  "value": -64.68092132370109
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -97.40844251097546,
+                "QRR": -0.3359823886270106
+              },
+              "QRR": -0.3359823886270106
+            },
+            "2": {
+              "request_id": "299be770-65a7-4b69-a8b3-1bed7703dc9b",
+              "rid8": "299be770",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -242.64870951062622,
+                "fitness_values": {
+                  "value": -242.64870951062622
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -77.63454387623247,
+                "QRR": 2.12552502269434
+              },
+              "QRR": 2.12552502269434
+            },
+            "3": {
+              "request_id": "7742d9d9-19a3-4349-bbe4-130f13834115",
+              "rid8": "7742d9d9",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -192.90671560890067,
+                "fitness_values": {
+                  "value": -192.90671560890067
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -77.63454387623247,
+                "QRR": 1.4848051650363125
+              },
+              "QRR": 1.4848051650363125
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": 1.4848051650363125
+        }
+      }
+    },
+    {
+      "req_id": "req_7",
+      "se_general_problem": "test case optimization",
+      "se_specific_problem": "test case selection",
+      "req_size": {
+        "char_count": 90336
+      },
+      "variants": {
+        "claude": {
+          "repeats": {
+            "1": {
+              "request_id": "d1d4324d-3f80-44e9-9406-e40114716192",
+              "rid8": "d1d4324d",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -612.69070766292,
+                "fitness_values": {
+                  "value": -612.69070766292
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -426.2499565789911,
+                "QRR": 0.43739770105848297
+              },
+              "QRR": 0.43739770105848297
+            },
+            "2": {
+              "request_id": "f0e5de0c-5c4a-4e05-bc61-d4bc5e53f20e",
+              "rid8": "f0e5de0c",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -204.23023588764,
+                "fitness_values": {
+                  "value": -204.23023588764
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -142.0833188596637,
+                "QRR": 0.43739770105848286
+              },
+              "QRR": 0.43739770105848286
+            },
+            "3": {
+              "request_id": "cc380791-2e54-4f04-92e7-6023f2ded310",
+              "rid8": "cc380791",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -90.06583996886195,
+                "fitness_values": {
+                  "value": -90.06583996886195
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -44.411730366892506,
+                "QRR": 1.0279741236113398
+              },
+              "QRR": 1.0279741236113398
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": 1.0279741236113398
+        },
+        "mega_prompt_record": {
+          "repeats": {
+            "1": {
+              "request_id": "a6c44c93-6d47-4fce-8d6c-c4fea73032e2",
+              "rid8": "a6c44c93",
+              "raw_compilation_success": false,
+              "raw_execution_success": false,
+              "raw_combination_success": false,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -426.2499565789911,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "2": {
+              "request_id": "bb724d29-7bd4-4d6c-b6bd-74c7ba75ddd7",
+              "rid8": "bb724d29",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": true,
+                "qubo_value": -808.2009197957641,
+                "fitness_values": {
+                  "value": -808.2009197957641
+                },
+                "solution_key": "bitstring",
+                "solution": {
+                  "type": "bitstring",
+                  "length": 806,
+                  "preview": "10111111111111111111111111111111111111111111111111",
+                  "truncated": true
+                },
+                "reference_qubo_value": -142.0833188596637,
+                "QRR": 4.688218196775285
+              },
+              "QRR": 4.688218196775285
+            },
+            "3": {
+              "request_id": "239769dd-f59a-4716-96d7-da58a06bb29e",
+              "rid8": "239769dd",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": true,
+                "qubo_value": -612.6907076629202,
+                "fitness_values": {
+                  "value": -612.6907076629202
+                },
+                "solution_key": "bitstring",
+                "solution": {
+                  "type": "bitstring",
+                  "length": 806,
+                  "preview": "10111111111011111111111111111111011111101011111011",
+                  "truncated": true
+                },
+                "reference_qubo_value": -44.411730366892506,
+                "QRR": 12.795695475077935
+              },
+              "QRR": 12.795695475077935
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": 12.795695475077935
+        },
+        "no_codegen_skill_record": {
+          "repeats": {
+            "1": {
+              "request_id": "d14a3059-3e18-475a-9f97-df49f55e344a",
+              "rid8": "d14a3059",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -426.2499565789911,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "2": {
+              "request_id": "f703a02e-17ce-423b-93f4-bfca10a0f099",
+              "rid8": "f703a02e",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -142.0833188596637,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "3": {
+              "request_id": "274b6c6e-2b11-4ec7-82a4-61b932efecfa",
+              "rid8": "274b6c6e",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -44.411730366892506,
+                "QRR": null
+              },
+              "QRR": null
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            }
+          },
+          "# of valid solution": 0,
+          "QRR": null
+        },
+        "no_knowledge_record": {
+          "repeats": {
+            "1": {
+              "request_id": "fa4c8ffa-9048-4c3d-af6b-e1a1eda4f60b",
+              "rid8": "fa4c8ffa",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -204.23023588764,
+                "fitness_values": {
+                  "value": -204.23023588764
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -426.2499565789911,
+                "QRR": -0.5208674329805056
+              },
+              "QRR": -0.5208674329805056
+            },
+            "2": {
+              "request_id": "44183dde-8241-47e9-899d-344f26800969",
+              "rid8": "44183dde",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -222.58874367560423,
+                "fitness_values": {
+                  "value": -222.58874367560423
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -142.0833188596637,
+                "QRR": 0.5666071531975972
+              },
+              "QRR": 0.5666071531975972
+            },
+            "3": {
+              "request_id": "581482a4-bc4a-44d4-96b8-38e9a8700583",
+              "rid8": "581482a4",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -44.411730366892506,
+                "QRR": null
+              },
+              "QRR": null
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": -0.5208674329805056
+        },
+        "no_reviewer_record": {
+          "repeats": {
+            "1": {
+              "request_id": "fc352d43-ca62-41c9-adf7-0bb2999945c4",
+              "rid8": "fc352d43",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -90.06583996886195,
+                "fitness_values": {
+                  "value": -90.06583996886195
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -426.2499565789911,
+                "QRR": -0.788701820190869
+              },
+              "QRR": -0.788701820190869
+            },
+            "2": {
+              "request_id": "4b6b7abc-84e2-4a30-b078-bd6e166566ad",
+              "rid8": "4b6b7abc",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": 91.48676547845437,
+                "fitness_values": {
+                  "value": 91.48676547845437
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -142.0833188596637,
+                "QRR": -1.6438951891939986
+              },
+              "QRR": -1.6438951891939986
+            },
+            "3": {
+              "request_id": "93dfc6bf-8554-4faf-8831-4074f6c6c416",
+              "rid8": "93dfc6bf",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -270.19751990658585,
+                "fitness_values": {
+                  "value": -270.19751990658585
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -44.411730366892506,
+                "QRR": 5.083922370834019
+              },
+              "QRR": 5.083922370834019
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": 5.083922370834019
+        }
+      }
+    },
+    {
+      "req_id": "req_10",
+      "se_general_problem": "test case optimization",
+      "se_specific_problem": "test case minimization",
+      "req_size": {
+        "char_count": 153230
+      },
+      "variants": {
+        "claude": {
+          "repeats": {
+            "1": {
+              "request_id": "0e0c18d0-235b-480e-9749-882ab4c0cc8a",
+              "rid8": "0e0c18d0",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": 0.0,
+                "fitness_values": {
+                  "value": 0.0
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 1134.8882333193455,
+                "QRR": 1.0
+              },
+              "QRR": 1.0
+            },
+            "2": {
+              "request_id": "c8d9aa6f-e853-4a7d-8f4d-db0c47b3a780",
+              "rid8": "c8d9aa6f",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -228.895196713187,
+                "fitness_values": {
+                  "value": -228.895196713187
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 48.23726304597034,
+                "QRR": 5.7451945292801705
+              },
+              "QRR": 5.7451945292801705
+            },
+            "3": {
+              "request_id": "17e19668-cd43-4b27-9abf-37743c9ac571",
+              "rid8": "17e19668",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": 67115.87377616715,
+                "fitness_values": {
+                  "value": 67115.87377616715
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 203298.08213750066,
+                "QRR": 0.6698646978343193
+              },
+              "QRR": 0.6698646978343193
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": 5.7451945292801705
+        },
+        "mega_prompt_record": {
+          "repeats": {
+            "1": {
+              "request_id": "3a966e5e-ccd8-4f47-af84-70240c8e6651",
+              "rid8": "3a966e5e",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": true,
+                "qubo_value": -6.738629834883264,
+                "fitness_values": {
+                  "value": -6.738629834883264
+                },
+                "solution_key": "bitstring",
+                "solution": {
+                  "type": "bitstring",
+                  "length": 100,
+                  "preview": "01010000010001010001000010001100111000000001100000",
+                  "truncated": true
+                },
+                "reference_qubo_value": 1134.8882333193455,
+                "QRR": 1.0059377034998187
+              },
+              "QRR": 1.0059377034998187
+            },
+            "2": {
+              "request_id": "e1d53aaa-c864-47e1-aa38-2895f216a0ec",
+              "rid8": "e1d53aaa",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": true,
+                "qubo_value": -24682.739443866485,
+                "fitness_values": {
+                  "value": -24682.739443866485
+                },
+                "solution_key": "bitstring",
+                "solution": {
+                  "type": "bitstring",
+                  "length": 310,
+                  "preview": "01010000010011011101110010001100111001110001101100",
+                  "truncated": true
+                },
+                "reference_qubo_value": 48.23726304597034,
+                "QRR": 512.6944429526136
+              },
+              "QRR": 512.6944429526136
+            },
+            "3": {
+              "request_id": "6d1e4aef-81be-4542-b282-7e1d66f19a0c",
+              "rid8": "6d1e4aef",
+              "raw_compilation_success": false,
+              "raw_execution_success": false,
+              "raw_combination_success": false,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 203298.08213750066,
+                "QRR": null
+              },
+              "QRR": null
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": 512.6944429526136
+        },
+        "no_codegen_skill_record": {
+          "repeats": {
+            "1": {
+              "request_id": "63c8af35-688a-41db-a3ef-dac11cdf7ec6",
+              "rid8": "63c8af35",
+              "raw_compilation_success": true,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": true,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 1134.8882333193455,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "2": {
+              "request_id": "06974a46-9fa3-498b-9b9c-54edeb180248",
+              "rid8": "06974a46",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 48.23726304597034,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "3": {
+              "request_id": "36684226-7c54-4bd5-be71-486ecde9bc9f",
+              "rid8": "36684226",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 203298.08213750066,
+                "QRR": null
+              },
+              "QRR": null
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.33333333333333337,
+              "pass@2": 0.6666666666666667,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            }
+          },
+          "# of valid solution": 0,
+          "QRR": null
+        },
+        "no_knowledge_record": {
+          "repeats": {
+            "1": {
+              "request_id": "5270ff33-d153-4308-84bb-415eafce9f9e",
+              "rid8": "5270ff33",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -265.095896644878,
+                "fitness_values": {
+                  "value": -265.095896644878
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 1134.8882333193455,
+                "QRR": 1.2335876686900875
+              },
+              "QRR": 1.2335876686900875
+            },
+            "2": {
+              "request_id": "d03611aa-c554-49c8-b5b8-d1a200a50863",
+              "rid8": "d03611aa",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 48.23726304597034,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "3": {
+              "request_id": "95989482-bc14-4812-969b-bbf09dfbd423",
+              "rid8": "95989482",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 203298.08213750066,
+                "QRR": null
+              },
+              "QRR": null
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.33333333333333337,
+              "pass@2": 0.6666666666666667,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.33333333333333337,
+              "pass@2": 0.6666666666666667,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.33333333333333337,
+              "pass@2": 0.6666666666666667,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": 1.2335876686900875
+        },
+        "no_reviewer_record": {
+          "repeats": {
+            "1": {
+              "request_id": "f8eaccfc-0f2f-4b94-8479-145e2ae267d6",
+              "rid8": "f8eaccfc",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": 67115.87377616715,
+                "fitness_values": {
+                  "value": 67115.87377616715
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 1134.8882333193455,
+                "QRR": -58.138751998393005
+              },
+              "QRR": -58.138751998393005
+            },
+            "2": {
+              "request_id": "fc360af4-2238-4e19-aec7-e7b46a0b4258",
+              "rid8": "fc360af4",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -7.561241047341783,
+                "fitness_values": {
+                  "value": -7.561241047341783
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 48.23726304597034,
+                "QRR": 1.1567510378881962
+              },
+              "QRR": 1.1567510378881962
+            },
+            "3": {
+              "request_id": "8c848cd2-feef-4ff6-919c-c35074f55c21",
+              "rid8": "8c848cd2",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": 47893.363378566915,
+                "fitness_values": {
+                  "value": 47893.363378566915
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 203298.08213750066,
+                "QRR": 0.7644180265991184
+              },
+              "QRR": 0.7644180265991184
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": 1.1567510378881962
+        }
+      }
+    },
+    {
+      "req_id": "req_11",
+      "se_general_problem": "test case optimization",
+      "se_specific_problem": "test case minimization",
+      "req_size": {
+        "char_count": 160505
+      },
+      "variants": {
+        "claude": {
+          "repeats": {
+            "1": {
+              "request_id": "18b25e3c-7f55-4ce6-94dc-640f71f061de",
+              "rid8": "18b25e3c",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -24.360779302378763,
+                "fitness_values": {
+                  "value": -24.360779302378763
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 1780.4569479161403,
+                "QRR": 1.0136823186490922
+              },
+              "QRR": 1.0136823186490922
+            },
+            "2": {
+              "request_id": "993c6433-9c3d-4a64-a8bd-eb63e31ad651",
+              "rid8": "993c6433",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -148.37425862731035,
+                "fitness_values": {
+                  "value": -148.37425862731035
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 817.9569479161393,
+                "QRR": 1.1813961712842158
+              },
+              "QRR": 1.1813961712842158
+            },
+            "3": {
+              "request_id": "4a95f75a-ff2b-4d8c-8528-951d7f31c69b",
+              "rid8": "4a95f75a",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -322.86007387232456,
+                "fitness_values": {
+                  "value": -322.86007387232456
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 47.956947916139434,
+                "QRR": 7.7322898537433655
+              },
+              "QRR": 7.7322898537433655
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": 1.1813961712842158
+        },
+        "mega_prompt_record": {
+          "repeats": {
+            "1": {
+              "request_id": "83831495-81d0-4e5b-94e6-c3148559e061",
+              "rid8": "83831495",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": true,
+                "qubo_value": -343.6668222521776,
+                "fitness_values": {
+                  "value": -343.6668222521776
+                },
+                "solution_key": "bitstring",
+                "solution": {
+                  "type": "bitstring",
+                  "length": 1925,
+                  "preview": "00110010001010000001110000000001000101000010000101",
+                  "truncated": true
+                },
+                "reference_qubo_value": 1780.4569479161403,
+                "QRR": 1.1930216974099868
+              },
+              "QRR": 1.1930216974099868
+            },
+            "2": {
+              "request_id": "45c6a5de-bdff-4f8f-b676-2886b33293a0",
+              "rid8": "45c6a5de",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": true,
+                "qubo_value": -0.005923507462686661,
+                "fitness_values": {
+                  "value": -0.005923507462686661
+                },
+                "solution_key": "bitstring",
+                "solution": {
+                  "type": "bitstring",
+                  "length": 100,
+                  "preview": "00000000000000000000000000000000000100000000000000",
+                  "truncated": true
+                },
+                "reference_qubo_value": 817.9569479161393,
+                "QRR": 1.00000724183281
+              },
+              "QRR": 1.00000724183281
+            },
+            "3": {
+              "request_id": "440f6090-04de-494c-b728-5d290c2c2041",
+              "rid8": "440f6090",
+              "raw_compilation_success": false,
+              "raw_execution_success": false,
+              "raw_combination_success": false,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 47.956947916139434,
+                "QRR": null
+              },
+              "QRR": null
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": 1.00000724183281
+        },
+        "no_codegen_skill_record": {
+          "repeats": {
+            "1": {
+              "request_id": "3d6cefce-ab4c-4c16-9719-25ab1226eac0",
+              "rid8": "3d6cefce",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 1780.4569479161403,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "2": {
+              "request_id": "4b1921a6-e748-4423-a981-b6ba4bdc0cee",
+              "rid8": "4b1921a6",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 817.9569479161393,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "3": {
+              "request_id": "6d36b094-e2be-40d4-b94f-d7e460a5209a",
+              "rid8": "6d36b094",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 47.956947916139434,
+                "QRR": null
+              },
+              "QRR": null
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            }
+          },
+          "# of valid solution": 0,
+          "QRR": null
+        },
+        "no_knowledge_record": {
+          "repeats": {
+            "1": {
+              "request_id": "7a6965c6-8513-4edf-94ec-d443eda05b33",
+              "rid8": "7a6965c6",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 1780.4569479161403,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "2": {
+              "request_id": "19bdaa89-1dad-46e1-a2ff-dd5a03aea859",
+              "rid8": "19bdaa89",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": 50641.0,
+                "fitness_values": {
+                  "value": 50641.0
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 817.9569479161393,
+                "QRR": -60.911571420739314
+              },
+              "QRR": -60.911571420739314
+            },
+            "3": {
+              "request_id": "4af9d48e-ed10-454a-869a-939d48f338b1",
+              "rid8": "4af9d48e",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 47.956947916139434,
+                "QRR": null
+              },
+              "QRR": null
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.33333333333333337,
+              "pass@2": 0.6666666666666667,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.33333333333333337,
+              "pass@2": 0.6666666666666667,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.33333333333333337,
+              "pass@2": 0.6666666666666667,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": -60.911571420739314
+        },
+        "no_reviewer_record": {
+          "repeats": {
+            "1": {
+              "request_id": "2f4d18d7-991f-4f21-afca-0097fa676b1f",
+              "rid8": "2f4d18d7",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -16.98324523156287,
+                "fitness_values": {
+                  "value": -16.98324523156287
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 1780.4569479161403,
+                "QRR": 1.0095387003046832
+              },
+              "QRR": 1.0095387003046832
+            },
+            "2": {
+              "request_id": "0fda02ba-709f-4128-926a-e2296a7b8438",
+              "rid8": "0fda02ba",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": 48630.0,
+                "fitness_values": {
+                  "value": 48630.0
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 817.9569479161393,
+                "QRR": -58.4530068164245
+              },
+              "QRR": -58.4530068164245
+            },
+            "3": {
+              "request_id": "483f016e-b5f7-4c1e-9e37-b1ea9755ca98",
+              "rid8": "483f016e",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": 52854.0,
+                "fitness_values": {
+                  "value": 52854.0
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 47.956947916139434,
+                "QRR": -1101.113505897495
+              },
+              "QRR": -1101.113505897495
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": -58.4530068164245
+        }
+      }
+    },
+    {
+      "req_id": "req_12",
+      "se_general_problem": "test case optimization",
+      "se_specific_problem": "test case minimization",
+      "req_size": {
+        "char_count": 450110
+      },
+      "variants": {
+        "claude": {
+          "repeats": {
+            "1": {
+              "request_id": "71fe4843-d947-49ed-bba7-78076456b004",
+              "rid8": "71fe4843",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -0.7688937146095148,
+                "fitness_values": {
+                  "value": -0.7688937146095148
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 228.52499206138455,
+                "QRR": 1.003364593551339
+              },
+              "QRR": 1.003364593551339
+            },
+            "2": {
+              "request_id": "2b7c20a5-f667-45ba-bffe-34950dbb0912",
+              "rid8": "2b7c20a5",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -88.18205998583207,
+                "fitness_values": {
+                  "value": -88.18205998583207
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -66.53547878780559,
+                "QRR": 0.3253389258242446
+              },
+              "QRR": 0.3253389258242446
+            },
+            "3": {
+              "request_id": "6c8c06d1-c2dd-4b78-bf83-6402a9876cfd",
+              "rid8": "6c8c06d1",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -88.18205998583207,
+                "fitness_values": {
+                  "value": -88.18205998583207
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -66.53547878780559,
+                "QRR": 0.3253389258242446
+              },
+              "QRR": 0.3253389258242446
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": 0.3253389258242446
+        },
+        "mega_prompt_record": {
+          "repeats": {
+            "1": {
+              "request_id": "84b6d512-8014-4be3-801c-c01e440fbb8a",
+              "rid8": "84b6d512",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": true,
+                "qubo_value": 0.0,
+                "fitness_values": {
+                  "value": 0.0
+                },
+                "solution_key": "bitstring",
+                "solution": {
+                  "type": "bitstring",
+                  "length": 120,
+                  "preview": "00000000000000000000000000000000000000000000000000",
+                  "truncated": true
+                },
+                "reference_qubo_value": 228.52499206138455,
+                "QRR": 1.0
+              },
+              "QRR": 1.0
+            },
+            "2": {
+              "request_id": "c2c74dad-3a94-4bb4-b538-3ad476e327f6",
+              "rid8": "c2c74dad",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": true,
+                "qubo_value": -4.329144687313425,
+                "fitness_values": {
+                  "value": -4.329144687313425
+                },
+                "solution_key": "bitstring",
+                "solution": {
+                  "type": "bitstring",
+                  "length": 146,
+                  "preview": "01110000000000000000000000000000010000000000000000",
+                  "truncated": true
+                },
+                "reference_qubo_value": -66.53547878780559,
+                "QRR": -0.9349347931932691
+              },
+              "QRR": -0.9349347931932691
+            },
+            "3": {
+              "request_id": "331dca26-1b33-4457-b1ca-c5239324fe61",
+              "rid8": "331dca26",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": true,
+                "qubo_value": 0.0,
+                "fitness_values": {
+                  "value": 0.0
+                },
+                "solution_key": "bitstring",
+                "solution": {
+                  "type": "bitstring",
+                  "length": 200,
+                  "preview": "00000000000000000000000000000000000000000000000000",
+                  "truncated": true
+                },
+                "reference_qubo_value": -66.53547878780559,
+                "QRR": -1.0
+              },
+              "QRR": -1.0
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": -0.9349347931932691
+        },
+        "no_codegen_skill_record": {
+          "repeats": {
+            "1": {
+              "request_id": "c3ab004e-6d7d-4b7a-a989-d3019ed4b392",
+              "rid8": "c3ab004e",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 228.52499206138455,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "2": {
+              "request_id": "3162d195-adcf-4f01-88a8-d4ee927ae630",
+              "rid8": "3162d195",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -66.53547878780559,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "3": {
+              "request_id": "d72a5793-2b3d-40dd-a71a-183e37195e9d",
+              "rid8": "d72a5793",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -66.53547878780559,
+                "QRR": null
+              },
+              "QRR": null
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            }
+          },
+          "# of valid solution": 0,
+          "QRR": null
+        },
+        "no_knowledge_record": {
+          "repeats": {
+            "1": {
+              "request_id": "f666c713-794d-4481-bef1-25247e4cff1e",
+              "rid8": "f666c713",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -48.489042611238254,
+                "fitness_values": {
+                  "value": -48.489042611238254
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 228.52499206138455,
+                "QRR": 1.2121826683980959
+              },
+              "QRR": 1.2121826683980959
+            },
+            "2": {
+              "request_id": "84691754-5027-4a94-bed1-067a6814eef5",
+              "rid8": "84691754",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -47.27553673593618,
+                "fitness_values": {
+                  "value": -47.27553673593618
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -66.53547878780559,
+                "QRR": -0.28946875265289757
+              },
+              "QRR": -0.28946875265289757
+            },
+            "3": {
+              "request_id": "b8a08f2e-3a2b-4005-9c6e-36f1776b6abc",
+              "rid8": "b8a08f2e",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -88.18205998583207,
+                "fitness_values": {
+                  "value": -88.18205998583207
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -66.53547878780559,
+                "QRR": 0.3253389258242446
+              },
+              "QRR": 0.3253389258242446
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": -0.28946875265289757
+        },
+        "no_reviewer_record": {
+          "repeats": {
+            "1": {
+              "request_id": "407ce66a-01ba-448d-a7ef-ead5e2389272",
+              "rid8": "407ce66a",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -2.1495799896855274,
+                "fitness_values": {
+                  "value": -2.1495799896855274
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 228.52499206138455,
+                "QRR": 1.0094063234410182
+              },
+              "QRR": 1.0094063234410182
+            },
+            "2": {
+              "request_id": "5a5812e9-9e4d-4cc6-b945-b207d4889e8b",
+              "rid8": "5a5812e9",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -1.3359912952348396,
+                "fitness_values": {
+                  "value": -1.3359912952348396
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -66.53547878780559,
+                "QRR": -0.9799206179984732
+              },
+              "QRR": -0.9799206179984732
+            },
+            "3": {
+              "request_id": "3e7098b9-0153-427a-9611-0467a230164e",
+              "rid8": "3e7098b9",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -95.4865986985826,
+                "fitness_values": {
+                  "value": -95.4865986985826
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -66.53547878780559,
+                "QRR": 0.4351230416949082
+              },
+              "QRR": 0.4351230416949082
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": -0.9799206179984732
+        }
+      }
+    },
+    {
+      "req_id": "req_13",
+      "se_general_problem": "test case optimization",
+      "se_specific_problem": "test case minimization",
+      "req_size": {
+        "char_count": 156156
+      },
+      "variants": {
+        "claude": {
+          "repeats": {
+            "1": {
+              "request_id": "2ef4db4e-d931-4179-b72c-875e979a2ef4",
+              "rid8": "2ef4db4e",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -638.6308059886519,
+                "fitness_values": {
+                  "value": -638.6308059886519
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -190.83497840061685,
+                "QRR": 2.3465081262408005
+              },
+              "QRR": 2.3465081262408005
+            },
+            "2": {
+              "request_id": "a9598f5e-0516-4e63-a0d8-1620b402742d",
+              "rid8": "a9598f5e",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -64.93393194012377,
+                "fitness_values": {
+                  "value": -64.93393194012377
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 609.6970057693195,
+                "QRR": 1.1065019695450033
+              },
+              "QRR": 1.1065019695450033
+            },
+            "3": {
+              "request_id": "eade2a11-73c6-4ae8-9a5f-b76262c1c1f1",
+              "rid8": "eade2a11",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -53.22118894373961,
+                "fitness_values": {
+                  "value": -53.22118894373961
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 692.8470057693185,
+                "QRR": 1.076815211007002
+              },
+              "QRR": 1.076815211007002
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": 1.1065019695450033
+        },
+        "mega_prompt_record": {
+          "repeats": {
+            "1": {
+              "request_id": "2cc3f9ec-d0b2-4cbc-8cb0-c6c0dad9e6d1",
+              "rid8": "2cc3f9ec",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": true,
+                "qubo_value": -3.1825557577657575,
+                "fitness_values": {
+                  "value": -3.1825557577657575
+                },
+                "solution_key": "bitstring",
+                "solution": {
+                  "type": "bitstring",
+                  "length": 12,
+                  "preview": "100000110001",
+                  "truncated": false
+                },
+                "reference_qubo_value": -190.83497840061685,
+                "QRR": -0.9833229956874852
+              },
+              "QRR": -0.9833229956874852
+            },
+            "2": {
+              "request_id": "3d9bffdb-abf5-42b9-898a-1b0a54201d6d",
+              "rid8": "3d9bffdb",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": true,
+                "qubo_value": -0.14189062206352188,
+                "fitness_values": {
+                  "value": -0.14189062206352188
+                },
+                "solution_key": "bitstring",
+                "solution": {
+                  "type": "bitstring",
+                  "length": 100,
+                  "preview": "00000000000000000000000010000000000000000000000000",
+                  "truncated": true
+                },
+                "reference_qubo_value": 609.6970057693195,
+                "QRR": 1.0002327231735122
+              },
+              "QRR": 1.0002327231735122
+            },
+            "3": {
+              "request_id": "82a45ff9-f753-4036-8046-030f6faf17ef",
+              "rid8": "82a45ff9",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": true,
+                "qubo_value": 0.0,
+                "fitness_values": {
+                  "value": 0.0
+                },
+                "solution_key": "bitstring",
+                "solution": {
+                  "type": "bitstring",
+                  "length": 10,
+                  "preview": "0000000000",
+                  "truncated": false
+                },
+                "reference_qubo_value": 692.8470057693185,
+                "QRR": 1.0
+              },
+              "QRR": 1.0
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": 1.0002327231735122
+        },
+        "no_codegen_skill_record": {
+          "repeats": {
+            "1": {
+              "request_id": "8f193536-5ad8-45c2-97c6-317b3b4db622",
+              "rid8": "8f193536",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -190.83497840061685,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "2": {
+              "request_id": "0f8863ee-0478-43a0-b942-d8ec74d9efc4",
+              "rid8": "0f8863ee",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 609.6970057693195,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "3": {
+              "request_id": "4f17a6c4-43a3-4626-b3c3-d151ba560ab6",
+              "rid8": "4f17a6c4",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 692.8470057693185,
+                "QRR": null
+              },
+              "QRR": null
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            }
+          },
+          "# of valid solution": 0,
+          "QRR": null
+        },
+        "no_knowledge_record": {
+          "repeats": {
+            "1": {
+              "request_id": "4d99ff1b-6c3b-4d65-a556-2078ee942cda",
+              "rid8": "4d99ff1b",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -190.83497840061685,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "2": {
+              "request_id": "353a9d05-31a5-4c97-9877-e509c19c007c",
+              "rid8": "353a9d05",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 609.6970057693195,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "3": {
+              "request_id": "27358bd2-1e6b-4742-a996-f4686c9838cf",
+              "rid8": "27358bd2",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 692.8470057693185,
+                "QRR": null
+              },
+              "QRR": null
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            }
+          },
+          "# of valid solution": 0,
+          "QRR": null
+        },
+        "no_reviewer_record": {
+          "repeats": {
+            "1": {
+              "request_id": "d269edbf-022b-40e2-9c5c-321da054df34",
+              "rid8": "d269edbf",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -1743.018823555544,
+                "fitness_values": {
+                  "value": -1743.018823555544
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -190.83497840061685,
+                "QRR": 8.13364435683511
+              },
+              "QRR": 8.13364435683511
+            },
+            "2": {
+              "request_id": "bd9b717b-24ac-4eec-bf50-b5bc7935ec60",
+              "rid8": "bd9b717b",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -119.85795136700358,
+                "fitness_values": {
+                  "value": -119.85795136700358
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 609.6970057693195,
+                "QRR": 1.196586091505839
+              },
+              "QRR": 1.196586091505839
+            },
+            "3": {
+              "request_id": "4dd2060d-f0cb-4c4d-9f52-80f589f4aac1",
+              "rid8": "4dd2060d",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -189.45098124883566,
+                "fitness_values": {
+                  "value": -189.45098124883566
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": 692.8470057693185,
+                "QRR": 1.2734384065620294
+              },
+              "QRR": 1.2734384065620294
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": 1.196586091505839
+        }
+      }
+    },
+    {
+      "req_id": "req_17",
+      "se_general_problem": "test case optimization",
+      "se_specific_problem": "test case minimization",
+      "req_size": {
+        "char_count": 90523
+      },
+      "variants": {
+        "claude": {
+          "repeats": {
+            "1": {
+              "request_id": "d1e1d76e-212a-401a-bb9a-b3e36c07b810",
+              "rid8": "d1e1d76e",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -90.06583996886195,
+                "fitness_values": {
+                  "value": -90.06583996886195
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -64.52751217827962,
+                "QRR": 0.39577425083464934
+              },
+              "QRR": 0.39577425083464934
+            },
+            "2": {
+              "request_id": "ba50ca7c-c108-4da1-88da-6ba8c13dcfd3",
+              "rid8": "ba50ca7c",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -483.41515626076006,
+                "fitness_values": {
+                  "value": -483.41515626076006
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -441.65762383430564,
+                "QRR": 0.09454729223041868
+              },
+              "QRR": 0.09454729223041868
+            },
+            "3": {
+              "request_id": "54c230e0-3d0b-4c76-9ef2-c2c128bf0311",
+              "rid8": "54c230e0",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -171.2653067032531,
+                "fitness_values": {
+                  "value": -171.2653067032531
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -160.61578602397398,
+                "QRR": 0.06630432128065873
+              },
+              "QRR": 0.06630432128065873
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 1.0,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": 0.09454729223041868
+        },
+        "mega_prompt_record": {
+          "repeats": {
+            "1": {
+              "request_id": "55f006d1-a519-4ec9-91b1-024ec368f716",
+              "rid8": "55f006d1",
+              "raw_compilation_success": false,
+              "raw_execution_success": false,
+              "raw_combination_success": false,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -64.52751217827962,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "2": {
+              "request_id": "fe47eceb-0944-45b5-8f29-ce6ca30ef3f7",
+              "rid8": "fe47eceb",
+              "raw_compilation_success": false,
+              "raw_execution_success": false,
+              "raw_combination_success": false,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -441.65762383430564,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "3": {
+              "request_id": "c4fd30dd-8312-43ee-91af-a72a7a95f031",
+              "rid8": "c4fd30dd",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": true,
+                "qubo_value": -17.75618741325358,
+                "fitness_values": {
+                  "value": -17.75618741325358
+                },
+                "solution_key": "bitstring",
+                "solution": {
+                  "type": "bitstring",
+                  "length": 31,
+                  "preview": "1011111111000101011111111111111",
+                  "truncated": false
+                },
+                "reference_qubo_value": -160.61578602397398,
+                "QRR": -0.8894493010132688
+              },
+              "QRR": -0.8894493010132688
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.33333333333333337,
+              "pass@2": 0.6666666666666667,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.33333333333333337,
+              "pass@2": 0.6666666666666667,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.33333333333333337,
+              "pass@2": 0.6666666666666667,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": -0.8894493010132688
+        },
+        "no_codegen_skill_record": {
+          "repeats": {
+            "1": {
+              "request_id": "ecda0b73-7356-4665-9699-69aed9a041fd",
+              "rid8": "ecda0b73",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -64.52751217827962,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "2": {
+              "request_id": "6275b23d-f3a3-429b-aed7-bdcf500a807f",
+              "rid8": "6275b23d",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -441.65762383430564,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "3": {
+              "request_id": "28eef7ef-2b25-4cf3-a530-544a53a1ddf4",
+              "rid8": "28eef7ef",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -160.61578602397398,
+                "QRR": null
+              },
+              "QRR": null
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.0,
+              "pass@2": 0.0,
+              "pass@3": 0.0
+            }
+          },
+          "# of valid solution": 0,
+          "QRR": null
+        },
+        "no_knowledge_record": {
+          "repeats": {
+            "1": {
+              "request_id": "7fc6082d-e961-4ddf-ae49-af239f2a593b",
+              "rid8": "7fc6082d",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -64.52751217827962,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "2": {
+              "request_id": "0ecab35a-63aa-477d-9d73-fdf975fec71a",
+              "rid8": "0ecab35a",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -441.65762383430564,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "3": {
+              "request_id": "498b099b-5b7d-49bf-aeed-9e0c350214d8",
+              "rid8": "498b099b",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": 76.61498337174699,
+                "fitness_values": {
+                  "value": 76.61498337174699
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -160.61578602397398,
+                "QRR": -1.4770078039546575
+              },
+              "QRR": -1.4770078039546575
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.33333333333333337,
+              "pass@2": 0.6666666666666667,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.33333333333333337,
+              "pass@2": 0.6666666666666667,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.33333333333333337,
+              "pass@2": 0.6666666666666667,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": -1.4770078039546575
+        },
+        "no_reviewer_record": {
+          "repeats": {
+            "1": {
+              "request_id": "795df437-b33d-49ad-91c0-cdbed83cff7b",
+              "rid8": "795df437",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": 49073095.6,
+                "fitness_values": {
+                  "value": 49073095.6
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -64.52751217827962,
+                "QRR": -760499.8003321523
+              },
+              "QRR": -760499.8003321523
+            },
+            "2": {
+              "request_id": "5dd0c283-ec19-41f2-9b22-a987bc79a1df",
+              "rid8": "5dd0c283",
+              "raw_compilation_success": false,
+              "raw_execution_success": null,
+              "raw_combination_success": null,
+              "compilation_success": false,
+              "execution_success": false,
+              "combination_success": false,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": null,
+                "fitness_values": {},
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -441.65762383430564,
+                "QRR": null
+              },
+              "QRR": null
+            },
+            "3": {
+              "request_id": "808dab99-fc65-4948-97c2-a59970659e41",
+              "rid8": "808dab99",
+              "raw_compilation_success": true,
+              "raw_execution_success": true,
+              "raw_combination_success": true,
+              "compilation_success": true,
+              "execution_success": true,
+              "combination_success": true,
+              "valid_solution": {
+                "is_valid": false,
+                "qubo_value": -29.150854745342034,
+                "fitness_values": {
+                  "value": -29.150854745342034
+                },
+                "solution_key": null,
+                "solution": null,
+                "reference_qubo_value": -160.61578602397398,
+                "QRR": -0.8185056682971941
+              },
+              "QRR": -0.8185056682971941
+            }
+          },
+          "output_metrics": {
+            "pass@k_compilation": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_execution": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            },
+            "pass@k_combination": {
+              "pass@1": 0.6666666666666667,
+              "pass@2": 1.0,
+              "pass@3": 1.0
+            }
+          },
+          "# of valid solution": 1,
+          "QRR": -760499.8003321523
+        }
+      }
+    }
+  ]
+}

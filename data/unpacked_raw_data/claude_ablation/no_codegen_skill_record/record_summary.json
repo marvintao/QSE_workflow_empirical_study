@@ -1,0 +1,22 @@
+{
+  "source": "./reports/no_codegen_skill_record.db",
+  "counts": {
+    "requests": 30,
+    "stage_traces": 148,
+    "agent_rounds": 48
+  },
+  "final_status_counts": {
+    "failed": 30
+  },
+  "verification_status_counts": {
+    "None": 30
+  },
+  "stage_counts": {
+    "parse": 30,
+    "analyze": 30,
+    "blueprint": 29,
+    "encode": 29,
+    "codegen": 29,
+    "global_review": 1
+  }
+}

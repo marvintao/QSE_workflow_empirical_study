@@ -1,0 +1,1242 @@
+[
+  {
+    "req_id": "req_0",
+    "se_general_problem": "test case optimization",
+    "se_specific_problem": "test case selection",
+    "req_size": {
+      "char_count": 153043
+    },
+    "repeats": {
+      "1": {
+        "request_id": "063cf0a4-7788-447d-b745-107eaf94ae03",
+        "rid8": "063cf0a4",
+        "wall-clock_time": 185.736,
+        "tokens": 1206022,
+        "compilation_success": true,
+        "execution_success": false,
+        "combination_success": false
+      },
+      "2": {
+        "request_id": "e00d05c5-f0b0-4bf8-8e0d-06dfcdd772ef",
+        "rid8": "e00d05c5",
+        "wall-clock_time": 359.389,
+        "tokens": 2038479,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "3": {
+        "request_id": "710b8a59-bd71-4923-99a4-5555fc3a9a9c",
+        "rid8": "710b8a59",
+        "wall-clock_time": 192.906,
+        "tokens": 1200065,
+        "compilation_success": true,
+        "execution_success": false,
+        "combination_success": false
+      }
+    },
+    "final_metrics": {
+      "wall-clock_time": {
+        "mean": 246.0103333333333,
+        "std": 80.22424307873248
+      },
+      "tokens": {
+        "mean": 1481522.0,
+        "std": 393835.58020151843
+      },
+      "pass@k_compilation": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_execution": {
+        "pass@1": 0.33333333333333337,
+        "pass@2": 0.6666666666666667,
+        "pass@3": 1.0
+      },
+      "pass@k_combination": {
+        "pass@1": 0.33333333333333337,
+        "pass@2": 0.6666666666666667,
+        "pass@3": 1.0
+      }
+    }
+  },
+  {
+    "req_id": "req_1",
+    "se_general_problem": "test case optimization",
+    "se_specific_problem": "test case selection",
+    "req_size": {
+      "char_count": 160318
+    },
+    "repeats": {
+      "1": {
+        "request_id": "ade91176-67d0-40d8-bbd8-c24cbc63cfa2",
+        "rid8": "ade91176",
+        "wall-clock_time": 335.216,
+        "tokens": 1810117,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "2": {
+        "request_id": "529625d1-75d7-438e-82ca-d09857873874",
+        "rid8": "529625d1",
+        "wall-clock_time": 306.786,
+        "tokens": 2102589,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "3": {
+        "request_id": "54399dad-9212-435b-9cb8-9af2c9dd2b1b",
+        "rid8": "54399dad",
+        "wall-clock_time": 253.237,
+        "tokens": 1941444,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      }
+    },
+    "final_metrics": {
+      "wall-clock_time": {
+        "mean": 298.41299999999995,
+        "std": 33.98744333818987
+      },
+      "tokens": {
+        "mean": 1951383.3333333333,
+        "std": 119607.86054529285
+      },
+      "pass@k_compilation": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_execution": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_combination": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      }
+    }
+  },
+  {
+    "req_id": "req_2",
+    "se_general_problem": "test case optimization",
+    "se_specific_problem": "test case selection",
+    "req_size": {
+      "char_count": 449923
+    },
+    "repeats": {
+      "1": {
+        "request_id": "961f2a2e-581d-440a-985c-57bdcfab71f8",
+        "rid8": "961f2a2e",
+        "wall-clock_time": 467.435,
+        "tokens": 2799951,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "2": {
+        "request_id": "574f8327-30f2-452e-8b18-9399a0e73c4c",
+        "rid8": "574f8327",
+        "wall-clock_time": 468.096,
+        "tokens": 2832332,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "3": {
+        "request_id": "99b775d5-0a84-491a-9135-4b6090921f38",
+        "rid8": "99b775d5",
+        "wall-clock_time": 468.348,
+        "tokens": 2861023,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      }
+    },
+    "final_metrics": {
+      "wall-clock_time": {
+        "mean": 467.95966666666664,
+        "std": 0.3849955266695426
+      },
+      "tokens": {
+        "mean": 2831102.0,
+        "std": 24947.70491782093
+      },
+      "pass@k_compilation": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_execution": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_combination": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      }
+    }
+  },
+  {
+    "req_id": "req_3",
+    "se_general_problem": "test case optimization",
+    "se_specific_problem": "test case selection",
+    "req_size": {
+      "char_count": 155969
+    },
+    "repeats": {
+      "1": {
+        "request_id": "93741be3-b306-437a-adda-253ef1bc33e5",
+        "rid8": "93741be3",
+        "wall-clock_time": 330.159,
+        "tokens": 1892227,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "2": {
+        "request_id": "26867630-7d2e-455c-96c9-eafb571d7e8e",
+        "rid8": "26867630",
+        "wall-clock_time": 309.621,
+        "tokens": 2054006,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "3": {
+        "request_id": "0e659987-8bdb-4cc6-a133-711b7af3f2de",
+        "rid8": "0e659987",
+        "wall-clock_time": 266.895,
+        "tokens": 1965721,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      }
+    },
+    "final_metrics": {
+      "wall-clock_time": {
+        "mean": 302.22499999999997,
+        "std": 26.351584847974518
+      },
+      "tokens": {
+        "mean": 1970651.3333333333,
+        "std": 66137.94851335771
+      },
+      "pass@k_compilation": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_execution": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_combination": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      }
+    }
+  },
+  {
+    "req_id": "req_4",
+    "se_general_problem": "test case optimization",
+    "se_specific_problem": "test case selection",
+    "req_size": {
+      "char_count": 9710
+    },
+    "repeats": {
+      "1": {
+        "request_id": "4273ea0d-66ca-4b25-9505-c5a444fcf5d6",
+        "rid8": "4273ea0d",
+        "wall-clock_time": 240.701,
+        "tokens": 1648085,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "2": {
+        "request_id": "160c5c54-9ec0-4f41-934a-4048771e151c",
+        "rid8": "160c5c54",
+        "wall-clock_time": 178.823,
+        "tokens": 1634331,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "3": {
+        "request_id": "dbc4048b-2af9-4cec-a467-4860ee6954d7",
+        "rid8": "dbc4048b",
+        "wall-clock_time": 198.134,
+        "tokens": 1673134,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      }
+    },
+    "final_metrics": {
+      "wall-clock_time": {
+        "mean": 205.886,
+        "std": 25.849459684875423
+      },
+      "tokens": {
+        "mean": 1651850.0,
+        "std": 16063.408127376539
+      },
+      "pass@k_compilation": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_execution": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_combination": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      }
+    }
+  },
+  {
+    "req_id": "req_5",
+    "se_general_problem": "test case optimization",
+    "se_specific_problem": "test case selection",
+    "req_size": {
+      "char_count": 6035
+    },
+    "repeats": {
+      "1": {
+        "request_id": "12cfbe06-f796-44f1-a49e-74811a914572",
+        "rid8": "12cfbe06",
+        "wall-clock_time": 221.32,
+        "tokens": 1656655,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "2": {
+        "request_id": "c078250a-893a-4ee2-8e2c-6a0f8ac1bd51",
+        "rid8": "c078250a",
+        "wall-clock_time": 168.804,
+        "tokens": 1715320,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "3": {
+        "request_id": "e2cc3232-e9a1-4797-9eb1-755ec2bf286d",
+        "rid8": "e2cc3232",
+        "wall-clock_time": 185.933,
+        "tokens": 1663358,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      }
+    },
+    "final_metrics": {
+      "wall-clock_time": {
+        "mean": 192.019,
+        "std": 21.86720696995084
+      },
+      "tokens": {
+        "mean": 1678444.3333333333,
+        "std": 26218.23343061508
+      },
+      "pass@k_compilation": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_execution": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_combination": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      }
+    }
+  },
+  {
+    "req_id": "req_6",
+    "se_general_problem": "test case optimization",
+    "se_specific_problem": "test case selection",
+    "req_size": {
+      "char_count": 64820
+    },
+    "repeats": {
+      "1": {
+        "request_id": "e1a2e72f-c2d9-443d-b1d3-30c46461df7b",
+        "rid8": "e1a2e72f",
+        "wall-clock_time": 228.246,
+        "tokens": 1796396,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "2": {
+        "request_id": "30b6e341-4909-408e-a04a-360063a54f61",
+        "rid8": "30b6e341",
+        "wall-clock_time": 213.656,
+        "tokens": 1850291,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "3": {
+        "request_id": "4a5e32fc-b337-4238-965a-e0d8f6fd182e",
+        "rid8": "4a5e32fc",
+        "wall-clock_time": 215.172,
+        "tokens": 1591600,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      }
+    },
+    "final_metrics": {
+      "wall-clock_time": {
+        "mean": 219.0246666666667,
+        "std": 6.54977380440645
+      },
+      "tokens": {
+        "mean": 1746095.6666666667,
+        "std": 111438.62591978101
+      },
+      "pass@k_compilation": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_execution": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_combination": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      }
+    }
+  },
+  {
+    "req_id": "req_7",
+    "se_general_problem": "test case optimization",
+    "se_specific_problem": "test case selection",
+    "req_size": {
+      "char_count": 90336
+    },
+    "repeats": {
+      "1": {
+        "request_id": "d1d4324d-3f80-44e9-9406-e40114716192",
+        "rid8": "d1d4324d",
+        "wall-clock_time": 240.111,
+        "tokens": 1833169,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "2": {
+        "request_id": "f0e5de0c-5c4a-4e05-bc61-d4bc5e53f20e",
+        "rid8": "f0e5de0c",
+        "wall-clock_time": 237.445,
+        "tokens": 1846441,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "3": {
+        "request_id": "cc380791-2e54-4f04-92e7-6023f2ded310",
+        "rid8": "cc380791",
+        "wall-clock_time": 239.006,
+        "tokens": 1837502,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      }
+    },
+    "final_metrics": {
+      "wall-clock_time": {
+        "mean": 238.854,
+        "std": 1.0936839884841802
+      },
+      "tokens": {
+        "mean": 1839037.3333333333,
+        "std": 5525.964913227574
+      },
+      "pass@k_compilation": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_execution": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_combination": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      }
+    }
+  },
+  {
+    "req_id": "req_8",
+    "se_general_problem": "test case optimization",
+    "se_specific_problem": "test case selection",
+    "req_size": {
+      "char_count": 25831
+    },
+    "repeats": {
+      "1": {
+        "request_id": "e4dc4fd5-1f73-4ccc-ab56-1ef096b0da9f",
+        "rid8": "e4dc4fd5",
+        "wall-clock_time": 269.109,
+        "tokens": 1740203,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "2": {
+        "request_id": "14dbd2ab-5f2c-4c97-9dc1-72b47f22649b",
+        "rid8": "14dbd2ab",
+        "wall-clock_time": 217.896,
+        "tokens": 1724246,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "3": {
+        "request_id": "52027cd4-d749-40f8-ba07-ffe210ddd30c",
+        "rid8": "52027cd4",
+        "wall-clock_time": 272.699,
+        "tokens": 1729436,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      }
+    },
+    "final_metrics": {
+      "wall-clock_time": {
+        "mean": 253.23466666666664,
+        "std": 25.031154539005104
+      },
+      "tokens": {
+        "mean": 1731295.0,
+        "std": 6645.719073207955
+      },
+      "pass@k_compilation": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_execution": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_combination": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      }
+    }
+  },
+  {
+    "req_id": "req_9",
+    "se_general_problem": "test case optimization",
+    "se_specific_problem": "test case selection",
+    "req_size": {
+      "char_count": 41681
+    },
+    "repeats": {
+      "1": {
+        "request_id": "c6da1b8a-1795-42fc-af6b-a44b4fca7fe3",
+        "rid8": "c6da1b8a",
+        "wall-clock_time": 292.936,
+        "tokens": 1776069,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "2": {
+        "request_id": "2cd470e7-e035-4ada-b9e5-2cf82ca34330",
+        "rid8": "2cd470e7",
+        "wall-clock_time": 257.35,
+        "tokens": 1768605,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "3": {
+        "request_id": "aefd4a35-1147-4f6b-9487-956d4802920c",
+        "rid8": "aefd4a35",
+        "wall-clock_time": 221.879,
+        "tokens": 1766690,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      }
+    },
+    "final_metrics": {
+      "wall-clock_time": {
+        "mean": 257.3883333333334,
+        "std": 29.00891143922654
+      },
+      "tokens": {
+        "mean": 1770454.6666666667,
+        "std": 4046.1801190203523
+      },
+      "pass@k_compilation": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_execution": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_combination": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      }
+    }
+  },
+  {
+    "req_id": "req_10",
+    "se_general_problem": "test case optimization",
+    "se_specific_problem": "test case minimization",
+    "req_size": {
+      "char_count": 153230
+    },
+    "repeats": {
+      "1": {
+        "request_id": "0e0c18d0-235b-480e-9749-882ab4c0cc8a",
+        "rid8": "0e0c18d0",
+        "wall-clock_time": 328.078,
+        "tokens": 2000514,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "2": {
+        "request_id": "c8d9aa6f-e853-4a7d-8f4d-db0c47b3a780",
+        "rid8": "c8d9aa6f",
+        "wall-clock_time": 274.038,
+        "tokens": 1964560,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "3": {
+        "request_id": "17e19668-cd43-4b27-9abf-37743c9ac571",
+        "rid8": "17e19668",
+        "wall-clock_time": 257.69,
+        "tokens": 1789190,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      }
+    },
+    "final_metrics": {
+      "wall-clock_time": {
+        "mean": 286.60200000000003,
+        "std": 30.077768179615088
+      },
+      "tokens": {
+        "mean": 1918088.0,
+        "std": 92318.98805049082
+      },
+      "pass@k_compilation": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_execution": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_combination": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      }
+    }
+  },
+  {
+    "req_id": "req_11",
+    "se_general_problem": "test case optimization",
+    "se_specific_problem": "test case minimization",
+    "req_size": {
+      "char_count": 160505
+    },
+    "repeats": {
+      "1": {
+        "request_id": "18b25e3c-7f55-4ce6-94dc-640f71f061de",
+        "rid8": "18b25e3c",
+        "wall-clock_time": 312.809,
+        "tokens": 2016680,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "2": {
+        "request_id": "993c6433-9c3d-4a64-a8bd-eb63e31ad651",
+        "rid8": "993c6433",
+        "wall-clock_time": 282.899,
+        "tokens": 2103471,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "3": {
+        "request_id": "4a95f75a-ff2b-4d8c-8528-951d7f31c69b",
+        "rid8": "4a95f75a",
+        "wall-clock_time": 310.939,
+        "tokens": 1971031,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      }
+    },
+    "final_metrics": {
+      "wall-clock_time": {
+        "mean": 302.2156666666667,
+        "std": 13.68026396756373
+      },
+      "tokens": {
+        "mean": 2030394.0,
+        "std": 54931.13110674735
+      },
+      "pass@k_compilation": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_execution": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_combination": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      }
+    }
+  },
+  {
+    "req_id": "req_12",
+    "se_general_problem": "test case optimization",
+    "se_specific_problem": "test case minimization",
+    "req_size": {
+      "char_count": 450110
+    },
+    "repeats": {
+      "1": {
+        "request_id": "71fe4843-d947-49ed-bba7-78076456b004",
+        "rid8": "71fe4843",
+        "wall-clock_time": 506.262,
+        "tokens": 2850729,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "2": {
+        "request_id": "2b7c20a5-f667-45ba-bffe-34950dbb0912",
+        "rid8": "2b7c20a5",
+        "wall-clock_time": 432.826,
+        "tokens": 2763354,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "3": {
+        "request_id": "6c8c06d1-c2dd-4b78-bf83-6402a9876cfd",
+        "rid8": "6c8c06d1",
+        "wall-clock_time": 438.771,
+        "tokens": 2807162,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      }
+    },
+    "final_metrics": {
+      "wall-clock_time": {
+        "mean": 459.2863333333333,
+        "std": 33.30536193401229
+      },
+      "tokens": {
+        "mean": 2807081.6666666665,
+        "std": 35670.73960856745
+      },
+      "pass@k_compilation": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_execution": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_combination": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      }
+    }
+  },
+  {
+    "req_id": "req_13",
+    "se_general_problem": "test case optimization",
+    "se_specific_problem": "test case minimization",
+    "req_size": {
+      "char_count": 156156
+    },
+    "repeats": {
+      "1": {
+        "request_id": "2ef4db4e-d931-4179-b72c-875e979a2ef4",
+        "rid8": "2ef4db4e",
+        "wall-clock_time": 335.543,
+        "tokens": 1994996,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "2": {
+        "request_id": "a9598f5e-0516-4e63-a0d8-1620b402742d",
+        "rid8": "a9598f5e",
+        "wall-clock_time": 279.809,
+        "tokens": 2030227,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "3": {
+        "request_id": "eade2a11-73c6-4ae8-9a5f-b76262c1c1f1",
+        "rid8": "eade2a11",
+        "wall-clock_time": 279.962,
+        "tokens": 1965679,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      }
+    },
+    "final_metrics": {
+      "wall-clock_time": {
+        "mean": 298.43800000000005,
+        "std": 26.237271466370125
+      },
+      "tokens": {
+        "mean": 1996967.3333333333,
+        "std": 26388.45318611069
+      },
+      "pass@k_compilation": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_execution": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_combination": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      }
+    }
+  },
+  {
+    "req_id": "req_14",
+    "se_general_problem": "test case optimization",
+    "se_specific_problem": "test case minimization",
+    "req_size": {
+      "char_count": 9897
+    },
+    "repeats": {
+      "1": {
+        "request_id": "c497b587-9908-4fe5-8317-463831b3eff3",
+        "rid8": "c497b587",
+        "wall-clock_time": 184.536,
+        "tokens": 1610968,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "2": {
+        "request_id": "3721ab44-8c0a-44cf-a324-f5b83ca8d519",
+        "rid8": "3721ab44",
+        "wall-clock_time": 167.702,
+        "tokens": 1616083,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "3": {
+        "request_id": "62fe0307-7b86-4590-aa43-aee458d6b3f5",
+        "rid8": "62fe0307",
+        "wall-clock_time": 170.28,
+        "tokens": 1649956,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      }
+    },
+    "final_metrics": {
+      "wall-clock_time": {
+        "mean": 174.1726666666667,
+        "std": 7.403176315309231
+      },
+      "tokens": {
+        "mean": 1625669.0,
+        "std": 17299.991965316054
+      },
+      "pass@k_compilation": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_execution": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_combination": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      }
+    }
+  },
+  {
+    "req_id": "req_15",
+    "se_general_problem": "test case optimization",
+    "se_specific_problem": "test case minimization",
+    "req_size": {
+      "char_count": 6222
+    },
+    "repeats": {
+      "1": {
+        "request_id": "f752285e-2717-4d8a-a722-24a4661cbd97",
+        "rid8": "f752285e",
+        "wall-clock_time": 148.084,
+        "tokens": 1577699,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "2": {
+        "request_id": "66820895-f2fe-452a-967c-e12a42b0355b",
+        "rid8": "66820895",
+        "wall-clock_time": 166.877,
+        "tokens": 1683336,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "3": {
+        "request_id": "ae98fa26-fd0a-4224-b098-ab4e0c786f66",
+        "rid8": "ae98fa26",
+        "wall-clock_time": 186.205,
+        "tokens": 1659154,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      }
+    },
+    "final_metrics": {
+      "wall-clock_time": {
+        "mean": 167.05533333333335,
+        "std": 15.563343949450228
+      },
+      "tokens": {
+        "mean": 1640063.0,
+        "std": 45189.5537560028
+      },
+      "pass@k_compilation": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_execution": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_combination": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      }
+    }
+  },
+  {
+    "req_id": "req_16",
+    "se_general_problem": "test case optimization",
+    "se_specific_problem": "test case minimization",
+    "req_size": {
+      "char_count": 65007
+    },
+    "repeats": {
+      "1": {
+        "request_id": "42b9dfdd-c9f3-438f-a295-49e156192061",
+        "rid8": "42b9dfdd",
+        "wall-clock_time": 235.136,
+        "tokens": 1801398,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "2": {
+        "request_id": "ec77a632-9221-4d9f-b9a3-8ba4e26aaeb3",
+        "rid8": "ec77a632",
+        "wall-clock_time": 182.799,
+        "tokens": 1771595,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "3": {
+        "request_id": "7e945736-352f-43ca-9fce-793c2f07d318",
+        "rid8": "7e945736",
+        "wall-clock_time": 212.784,
+        "tokens": 1778954,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      }
+    },
+    "final_metrics": {
+      "wall-clock_time": {
+        "mean": 210.2396666666667,
+        "std": 21.44210214093343
+      },
+      "tokens": {
+        "mean": 1783982.3333333333,
+        "std": 12675.903763527958
+      },
+      "pass@k_compilation": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_execution": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_combination": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      }
+    }
+  },
+  {
+    "req_id": "req_17",
+    "se_general_problem": "test case optimization",
+    "se_specific_problem": "test case minimization",
+    "req_size": {
+      "char_count": 90523
+    },
+    "repeats": {
+      "1": {
+        "request_id": "d1e1d76e-212a-401a-bb9a-b3e36c07b810",
+        "rid8": "d1e1d76e",
+        "wall-clock_time": 235.142,
+        "tokens": 1844941,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "2": {
+        "request_id": "ba50ca7c-c108-4da1-88da-6ba8c13dcfd3",
+        "rid8": "ba50ca7c",
+        "wall-clock_time": 191.862,
+        "tokens": 1750186,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "3": {
+        "request_id": "54c230e0-3d0b-4c76-9ef2-c2c128bf0311",
+        "rid8": "54c230e0",
+        "wall-clock_time": 218.377,
+        "tokens": 1827821,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      }
+    },
+    "final_metrics": {
+      "wall-clock_time": {
+        "mean": 215.12700000000004,
+        "std": 17.817808974917952
+      },
+      "tokens": {
+        "mean": 1807649.3333333333,
+        "std": 41229.43615374282
+      },
+      "pass@k_compilation": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_execution": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_combination": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      }
+    }
+  },
+  {
+    "req_id": "req_18",
+    "se_general_problem": "test case optimization",
+    "se_specific_problem": "test case minimization",
+    "req_size": {
+      "char_count": 26018
+    },
+    "repeats": {
+      "1": {
+        "request_id": "e2e41ef1-4380-4903-9e04-65626d2f0eb9",
+        "rid8": "e2e41ef1",
+        "wall-clock_time": 283.801,
+        "tokens": 1764150,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "2": {
+        "request_id": "1db11564-65e5-44e2-b625-5402b47142b9",
+        "rid8": "1db11564",
+        "wall-clock_time": 194.921,
+        "tokens": 1724350,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "3": {
+        "request_id": "9dae9051-46a2-4f17-ba33-2d2ef16a2f1b",
+        "rid8": "9dae9051",
+        "wall-clock_time": 186.8,
+        "tokens": 1705005,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      }
+    },
+    "final_metrics": {
+      "wall-clock_time": {
+        "mean": 221.84066666666664,
+        "std": 43.93783366176453
+      },
+      "tokens": {
+        "mean": 1731168.3333333333,
+        "std": 24622.483063700587
+      },
+      "pass@k_compilation": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_execution": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_combination": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      }
+    }
+  },
+  {
+    "req_id": "req_19",
+    "se_general_problem": "test case optimization",
+    "se_specific_problem": "test case minimization",
+    "req_size": {
+      "char_count": 41868
+    },
+    "repeats": {
+      "1": {
+        "request_id": "03d89c68-f9f2-4c93-9da9-9364e8d53951",
+        "rid8": "03d89c68",
+        "wall-clock_time": 202.223,
+        "tokens": 1712962,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "2": {
+        "request_id": "d1bffa2c-2616-42c7-9e8b-f89890b67d0e",
+        "rid8": "d1bffa2c",
+        "wall-clock_time": 176.062,
+        "tokens": 1687622,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      },
+      "3": {
+        "request_id": "8d30e22e-92b0-493f-9914-1fcbe09a8910",
+        "rid8": "8d30e22e",
+        "wall-clock_time": 182.688,
+        "tokens": 1739667,
+        "compilation_success": true,
+        "execution_success": true,
+        "combination_success": true
+      }
+    },
+    "final_metrics": {
+      "wall-clock_time": {
+        "mean": 186.99099999999999,
+        "std": 11.105144063300878
+      },
+      "tokens": {
+        "mean": 1713417.0,
+        "std": 21249.71803734503
+      },
+      "pass@k_compilation": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_execution": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      },
+      "pass@k_combination": {
+        "pass@1": 1.0,
+        "pass@2": 1.0,
+        "pass@3": 1.0
+      }
+    }
+  }
+]

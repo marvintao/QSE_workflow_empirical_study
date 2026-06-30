@@ -1,0 +1,28 @@
+{
+  "source": "./reports/no_knowledge_record.db",
+  "counts": {
+    "requests": 30,
+    "stage_traces": 4169,
+    "agent_rounds": 449
+  },
+  "final_status_counts": {
+    "failed": 14,
+    "success": 16
+  },
+  "verification_status_counts": {
+    "None": 13,
+    "unverified": 16,
+    "failed": 1
+  },
+  "stage_counts": {
+    "parse": 30,
+    "analyze": 30,
+    "blueprint": 29,
+    "encode": 29,
+    "codegen": 29,
+    "global_review": 17,
+    "execute": 3971,
+    "combine": 17,
+    "verify": 17
+  }
+}

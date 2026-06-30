@@ -1,0 +1,37 @@
+{
+  "inputs": {
+    "raw_dir": "./empirical_study/data/unpacked_raw_data/claude",
+    "experiment_runs": "./empirical_study/data/unpacked_raw_data/claude/experiment_runs.jsonl",
+    "record_traces": "./empirical_study/data/unpacked_raw_data/claude/record_traces.jsonl",
+    "req_overview": "./use_cases/requirements/req_overview.json",
+    "req_txt_dir": "./use_cases/requirements/req_txt"
+  },
+  "counts": {
+    "requirements": 20,
+    "runs": 60,
+    "runs_with_trace": 60,
+    "runs_without_trace": 0,
+    "missing_trace_ids": 0,
+    "missing_run_ids": 0
+  },
+  "compilation_success_source_counts": {
+    "compile_check_tool": 60
+  },
+  "uncomputable_or_null_metrics": {
+    "pass_at_k_with_insufficient_repeats": [],
+    "notes": [
+      "RQ1 processes only the Claude run under unpacked_raw_data/claude.",
+      "Only test case optimization requirements are included: test case selection and test case minimization.",
+      "pass@k is computed over planned runs from unpacked_raw_data/claude/experiment_runs.jsonl.",
+      "Runs without unpacked trace data are retained with null wall-clock_time/tokens; their success fields come from experiment_runs.jsonl.",
+      "Mean and std for wall-clock_time and tokens exclude null values.",
+      "req_size.char_count is the number of characters in the matching UTF-8 requirement text file, excluding a UTF-8 BOM if present.",
+      "No approximation-ratio metric is generated here because the requested RQ1 JSON schema does not include solution-quality fields and the available traces do not provide a uniform ground-truth optimum."
+    ]
+  },
+  "data_quality_notes": {
+    "missing_trace_ids": [],
+    "missing_run_ids": [],
+    "repeated_non_execute_stages": []
+  }
+}

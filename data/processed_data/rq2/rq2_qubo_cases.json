@@ -1,0 +1,82 @@
+{
+  "test case selection": {
+    "num_valid_reductionRate": 10,
+    "cases": {
+      "lt_-5%": {
+        "count": 0,
+        "ratio": 0.0,
+        "req_ids": []
+      },
+      "-5%_to_5%": {
+        "count": 0,
+        "ratio": 0.0,
+        "req_ids": []
+      },
+      "gt_5%": {
+        "count": 10,
+        "ratio": 1.0,
+        "req_ids": [
+          "req_0",
+          "req_1",
+          "req_2",
+          "req_3",
+          "req_4",
+          "req_5",
+          "req_6",
+          "req_7",
+          "req_8",
+          "req_9"
+        ]
+      }
+    }
+  },
+  "test case minimization": {
+    "num_valid_reductionRate": 10,
+    "cases": {
+      "lt_-5%": {
+        "count": 0,
+        "ratio": 0.0,
+        "req_ids": []
+      },
+      "-5%_to_5%": {
+        "count": 2,
+        "ratio": 0.2,
+        "req_ids": [
+          "req_16",
+          "req_18"
+        ]
+      },
+      "gt_5%": {
+        "count": 8,
+        "ratio": 0.8,
+        "req_ids": [
+          "req_10",
+          "req_11",
+          "req_12",
+          "req_13",
+          "req_14",
+          "req_15",
+          "req_17",
+          "req_19"
+        ]
+      }
+    }
+  },
+  "overall": {
+    "num_valid_reductionRate": 20,
+    "cases": {
+      "lt_-5%": {
+        "count": 0,
+        "ratio": 0.0
+      },
+      "-5%_to_5%": {
+        "count": 2,
+        "ratio": 0.1
+      },
+      "gt_5%": {
+        "count": 18,
+        "ratio": 0.9
+      }
+    }
+  }
+}
