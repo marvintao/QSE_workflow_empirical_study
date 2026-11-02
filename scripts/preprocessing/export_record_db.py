@@ -1,3 +1,6 @@
+# Copyright (c) 2026 QJump.ai
+# SPDX-License-Identifier: MIT
+
 """Export a record SQLite DB into readable JSON and JSONL artifacts.
 
 The exported record database is a SQLite trace store with three tables:

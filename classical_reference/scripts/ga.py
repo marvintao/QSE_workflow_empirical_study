@@ -1,3 +1,6 @@
+# Copyright (c) 2026 QJump.ai
+# SPDX-License-Identifier: MIT
+
 """Reusable GA wrapper following the IGDec-QAOA classical baseline.
 
 Original artifact source: https://zenodo.org/records/13911651

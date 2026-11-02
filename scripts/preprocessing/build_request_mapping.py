@@ -1,3 +1,6 @@
+# Copyright (c) 2026 QJump.ai
+# SPDX-License-Identifier: MIT
+
 """Build structured request/run mappings for empirical-study preprocessing.
 
 Outputs:

@@ -1,3 +1,6 @@
+# Copyright (c) 2026 QJump.ai
+# SPDX-License-Identifier: MIT
+
 """Raw QUBO helpers for test-case reference comparison."""
 
 from __future__ import annotations

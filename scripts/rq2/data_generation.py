@@ -1,3 +1,6 @@
+# Copyright (c) 2026 QJump.ai
+# SPDX-License-Identifier: MIT
+
 """Generate RQ2 QUBO-value reduction data for the Claude runs.
 
 The script is scoped to test case optimization requirements only:

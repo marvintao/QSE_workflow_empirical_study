@@ -1,3 +1,6 @@
+# Copyright (c) 2026 QJump.ai
+# SPDX-License-Identifier: MIT
+
 """Export all model record databases into unpacked raw-data directories."""
 from __future__ import annotations
 

@@ -346,3 +346,9 @@ RQ5 visualization reads:
 
 No additional processed reports, legend-only figures, or unused tables are
 required for the current visualization set.
+
+## License
+
+Copyright (c) 2026 QJump.ai
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.

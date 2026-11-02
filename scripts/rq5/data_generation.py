@@ -1,3 +1,6 @@
+# Copyright (c) 2026 QJump.ai
+# SPDX-License-Identifier: MIT
+
 """Generate rq5 generation-effectiveness data across model runs.
 
 The script reads structured files under:

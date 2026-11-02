@@ -1,3 +1,6 @@
+# Copyright (c) 2026 QJump.ai
+# SPDX-License-Identifier: MIT
+
 """Generate RQ3 workflow-pattern data for Claude successful-combination runs.
 
 The script reads structured files under:

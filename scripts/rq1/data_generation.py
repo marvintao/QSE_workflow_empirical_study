@@ -1,3 +1,6 @@
+# Copyright (c) 2026 QJump.ai
+# SPDX-License-Identifier: MIT
+
 """Generate RQ1 analysis data from Claude unpacked workflow traces.
 
 The script only reads structured files under:
